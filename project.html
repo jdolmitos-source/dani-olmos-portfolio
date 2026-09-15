@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitle">Project — Industrial Footwear Design Portfolio</title>
+<meta name="description" id="pageDesc" content="Footwear project case study: problem, research, pattern engineering, materials, manufacturing considerations and final product.">
+<link rel="canonical" id="canonical" href="https://example-domain.web.app/project.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#131210">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="logo-mark">
+    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="11.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path d="M8 15c1.5-4 3-6 5-6s3.5 2 5 6" stroke="#b3541f" stroke-width="1.3"/></svg>
+    <span>F.D. — 18Y</span>
+  </a>
+  <nav class="primary-nav" id="primaryNav">
+    <ul>
+      <li><a href="index.html#about"><span data-lang-block="en">About</span><span data-lang-block="es">Sobre mí</span></a></li>
+      <li><a href="index.html#workflow"><span data-lang-block="en">Workflow</span><span data-lang-block="es">Proceso</span></a></li>
+      <li><a href="index.html#ai-design"><span data-lang-block="en">AI Design</span><span data-lang-block="es">Diseño con IA</span></a></li>
+      <li><a href="index.html#projects"><span data-lang-block="en">Projects</span><span data-lang-block="es">Proyectos</span></a></li>
+      <li><a href="index.html#skills"><span data-lang-block="en">Skills</span><span data-lang-block="es">Capacidades</span></a></li>
+      <li><a href="index.html#contact"><span data-lang-block="en">Contact</span><span data-lang-block="es">Contacto</span></a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch" role="group" aria-label="Language">
+      <button data-set-lang="en" aria-pressed="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button data-set-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="projectRoot">
+  <!-- rendered by js/project-page.js -->
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> — <span data-lang-block="en">Dani Olmos. All rights reserved.</span><span data-lang-block="es">Dani Olmos. Todos los derechos reservados.</span></span>
+  <a href="index.html" data-lang-block="en">← Back to portfolio</a><a href="index.html" data-lang-block="es">← Volver al portafolio</a>
+</footer>
+
+<script src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer-legacy.js" defer></script>
+
+<!-- Firebase (safe to load even before you configure it — see js/firebase-config.js) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js" defer></script>
+<script src="js/firebase-config.js" defer></script>
+<script src="js/firebase-init.js" defer></script>
+
+<script src="js/projects-data.js" defer></script>
+<script src="js/projects-loader.js" defer></script>
+<script src="js/project-page.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de administración — Portafolio</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* admin-only tweaks, kept separate from the public site's stylesheet */
+  body{ padding-bottom:6rem; }
+  .admin-header{ position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center;
+    padding:1.2rem var(--gutter); background:rgba(19,18,16,.95); border-bottom:1px solid var(--line); }
+  .admin-wrap{ max-width:900px; margin-inline:auto; padding:3rem var(--gutter); }
+  .login-box{ max-width:380px; margin:14vh auto; display:flex; flex-direction:column; gap:1rem; }
+  .field{ display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.3rem; }
+  .field label{ font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); }
+  .field input[type=text], .field input[type=email], .field input[type=password], .field input[type=number], .field textarea, .field select{
+    background:var(--bg-elevated); border:1px solid var(--line-strong); color:var(--ink); padding:.8rem .9rem; font-family:var(--f-body); font-size:.92rem; width:100%;
+  }
+  .field textarea{ min-height:90px; resize:vertical; }
+  .field-pair{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+  @media (max-width:640px){ .field-pair{ grid-template-columns:1fr; } }
+  .field-note{ font-size:.75rem; color:var(--ink-faint); }
+  fieldset{ border:1px solid var(--line); padding:1.6rem; margin-bottom:2rem; }
+  legend{ font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--tan); padding:0 .5rem; }
+  .msg{ font-family:var(--f-mono); font-size:.8rem; padding:.8rem 1rem; border:1px solid var(--line-strong); margin-bottom:1rem; }
+  .msg.error{ color:#e2a5a5; border-color:#e2a5a5; }
+  .msg.ok{ color:var(--tan-soft); border-color:var(--tan); }
+  .project-row{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--line); }
+  .project-row .actions{ display:flex; gap:.6rem; flex-shrink:0; }
+  .project-row .actions button{ font-family:var(--f-mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; border:1px solid var(--line-strong); padding:.4rem .7rem; }
+  .project-row .actions button.danger:hover{ border-color:#e2a5a5; color:#e2a5a5; }
+  .media-block{ border:1px solid var(--line); padding:1rem; margin-bottom:1rem; display:grid; gap:.8rem; grid-template-columns:140px 1fr; align-items:start; }
+  @media (max-width:640px){ .media-block{ grid-template-columns:1fr; } }
+  .media-block .preview{ width:140px; height:100px; object-fit:cover; background:var(--bg-elevated); border:1px solid var(--line); }
+  .hidden{ display:none !important; }
+  .setup-notice{ border:1px dashed var(--line-strong); padding:1.4rem; font-size:.9rem; color:var(--ink-dim); margin-bottom:2rem; }
+  .setup-notice a{ color:var(--tan-soft); text-decoration:underline; }
+  .spin-frame{ width:100px; display:flex; flex-direction:column; gap:.3rem; align-items:center; }
+  .spin-frame img{ width:100px; height:100px; object-fit:cover; border:1px solid var(--line-strong); background:var(--bg-elevated); }
+  .spin-frame .spin-frame-num{ font-family:var(--f-mono); font-size:.65rem; color:var(--ink-faint); }
+  .spin-frame .spin-frame-btns{ display:flex; gap:.3rem; }
+  .spin-frame .spin-frame-btns button{ font-family:var(--f-mono); font-size:.65rem; border:1px solid var(--line-strong); padding:.15rem .4rem; }
+  .spin-frame .spin-frame-btns button.danger:hover{ border-color:#e2a5a5; color:#e2a5a5; }
+</style>
+</head>
+<body>
+
+<div id="setupNotice" class="wrap hidden" style="padding-top:3rem;">
+  <div class="setup-notice">
+    Firebase todavía no está configurado. Abre <code>js/firebase-config.js</code> y pega los datos de tu
+    proyecto de Firebase (Consola → Configuración del proyecto → Tus apps). Luego recarga esta página.
+    Instrucciones completas en <code>README.md</code>.
+  </div>
+</div>
+
+<div id="loginScreen" class="wrap hidden">
+  <div class="login-box">
+    <p class="eyebrow">Admin</p>
+    <h2 class="h2" style="font-size:1.8rem;">Iniciar sesión</h2>
+    <div id="loginMsg"></div>
+    <div class="field"><label for="loginEmail">Correo</label><input type="email" id="loginEmail" autocomplete="username"></div>
+    <div class="field"><label for="loginPass">Contraseña</label><input type="password" id="loginPass" autocomplete="current-password"></div>
+    <button class="btn primary" id="loginBtn" style="justify-content:center;">Entrar</button>
+    <p class="field-note">Este usuario se crea manualmente en la Consola de Firebase → Authentication → Add user. No hay registro público.</p>
+  </div>
+</div>
+
+<div id="dashboard" class="hidden">
+  <header class="admin-header">
+    <span class="eyebrow" style="margin:0;">Panel de administración</span>
+    <div style="display:flex;gap:1rem;align-items:center;">
+      <a href="index.html" class="btn" style="padding:.6rem 1rem;">Ver sitio</a>
+      <button class="btn" id="logoutBtn" style="padding:.6rem 1rem;">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="admin-wrap">
+    <div id="dashMsg"></div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+      <h2 class="h2" style="font-size:1.6rem;">Tus proyectos</h2>
+      <button class="btn primary" id="newProjectBtn">+ Nuevo proyecto</button>
+    </div>
+
+    <div id="projectList"></div>
+
+    <form id="projectForm" class="hidden" style="margin-top:3rem;">
+      <h3 id="formTitle" class="h3" style="margin-bottom:1.5rem;">Nuevo proyecto</h3>
+
+      <fieldset>
+        <legend>Datos básicos</legend>
+        <div class="field-pair">
+          <div class="field"><label>Slug (identificador único, sin espacios)</label><input type="text" id="f_slug" placeholder="mi-zapato-nuevo"></div>
+          <div class="field"><label>Año</label><input type="text" id="f_year" placeholder="2026"></div>
+        </div>
+        <div class="field-pair">
+          <div class="field"><label>Orden (número, menor aparece primero)</label><input type="number" id="f_order" value="1"></div>
+          <div class="field"><label>Modelo 3D (.glb) — opcional</label><input type="file" id="f_model3d" accept=".glb"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Título / Título</legend>
+        <div class="field-pair">
+          <div class="field"><label>Title (EN)</label><input type="text" id="f_title_en"></div>
+          <div class="field"><label>Título (ES)</label><input type="text" id="f_title_es"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Categoría / Rol</legend>
+        <div class="field-pair">
+          <div class="field"><label>Category (EN)</label><input type="text" id="f_category_en" placeholder="Sports Footwear"></div>
+          <div class="field"><label>Categoría (ES)</label><input type="text" id="f_category_es" placeholder="Calzado Deportivo"></div>
+        </div>
+        <div class="field-pair">
+          <div class="field"><label>Role (EN)</label><input type="text" id="f_role_en"></div>
+          <div class="field"><label>Rol (ES)</label><input type="text" id="f_role_es"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Resumen</legend>
+        <div class="field-pair">
+          <div class="field"><label>Summary (EN)</label><textarea id="f_summary_en"></textarea></div>
+          <div class="field"><label>Resumen (ES)</label><textarea id="f_summary_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Problema</legend>
+        <div class="field-pair">
+          <div class="field"><label>Problem (EN)</label><textarea id="f_problem_en"></textarea></div>
+          <div class="field"><label>Problema (ES)</label><textarea id="f_problem_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Investigación</legend>
+        <div class="field-pair">
+          <div class="field"><label>Research (EN)</label><textarea id="f_research_en"></textarea></div>
+          <div class="field"><label>Investigación (ES)</label><textarea id="f_research_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Materiales</legend>
+        <div class="field-pair">
+          <div class="field"><label>Materials (EN)</label><textarea id="f_materials_en"></textarea></div>
+          <div class="field"><label>Materiales (ES)</label><textarea id="f_materials_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Suela</legend>
+        <div class="field-pair">
+          <div class="field"><label>Outsole (EN)</label><textarea id="f_outsole_en"></textarea></div>
+          <div class="field"><label>Suela (ES)</label><textarea id="f_outsole_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Manufactura</legend>
+        <div class="field-pair">
+          <div class="field"><label>Manufacturing (EN)</label><textarea id="f_manufacturing_en"></textarea></div>
+          <div class="field"><label>Manufactura (ES)</label><textarea id="f_manufacturing_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Lecciones aprendidas (una por línea)</legend>
+        <div class="field-pair">
+          <div class="field"><label>Lessons (EN)</label><textarea id="f_lessons_en"></textarea></div>
+          <div class="field"><label>Lecciones (ES)</label><textarea id="f_lessons_es"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Vista 360° (opcional)</legend>
+        <p class="field-note" style="margin-bottom:1rem;">
+          Agrega las fotos del turntable (en cualquier orden) y luego usa las flechas para
+          ponerlas en el orden correcto de giro — no depende del nombre del archivo.
+          Recomendado: 24–36 fotos para que el giro se vea fluido; con pocas fotos el
+          movimiento se ve más brusco. Si editas un proyecto que ya tenía fotos 360°, aparecen
+          aquí abajo para que las reordenes, quites, o agregues más.
+        </p>
+        <div class="field"><label>Agregar fotos</label><input type="file" id="f_spin360" accept="image/*" multiple></div>
+        <div id="spin360Strip" style="display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem;"></div>
+        <p class="field-note" id="spin360Existing"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Videos del proceso (opcional)</legend>
+        <p class="field-note" style="margin-bottom:1rem;">
+          MP4 recomendado. Archivos grandes tardan más en subir — no cierres esta pestaña mientras dice "Guardando…".
+        </p>
+        <div id="videoBlocks"></div>
+        <button type="button" class="btn" id="addVideoBtn">+ Agregar video</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Imágenes</legend>
+        <p class="field-note" style="margin-bottom:1rem;">Cada imagen va etiquetada con la sección donde aparecerá en la página del proyecto.</p>
+        <div id="mediaBlocks"></div>
+        <button type="button" class="btn" id="addMediaBtn">+ Agregar imagen</button>
+      </fieldset>
+
+      <div style="display:flex;gap:1rem;margin-top:2rem;">
+        <button type="submit" class="btn primary" id="saveBtn">Guardar y publicar</button>
+        <button type="button" class="btn" id="cancelFormBtn">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
