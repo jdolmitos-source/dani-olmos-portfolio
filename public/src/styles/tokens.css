@@ -1,0 +1,79 @@
+/**
+ * Design Tokens
+ * -----------------------------------------------------------------------
+ * Single source of truth for color, typography and spacing.
+ * NEVER hardcode a hex value or a spacing number elsewhere in the app —
+ * reference these custom properties instead. Changing the whole visual
+ * identity should mean editing this file only.
+ * -----------------------------------------------------------------------
+ */
+
+:root {
+  /* ---------- Color: surfaces ---------- */
+  --color-bg: #111827;
+  --color-panel: #1F2937;
+  --color-card: #273445;
+
+  /* ---------- Color: semantic ---------- */
+  --color-accent: #3B82F6;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* ---------- Color: text ---------- */
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+  --color-text-on-accent: #FFFFFF;
+
+  /* ---------- Color: borders ---------- */
+  --color-border: #374151;
+  --color-border-subtle: #2B3648;
+
+  /* ---------- Typography ---------- */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-xxl: 2rem;     /* 32px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+
+  /* ---------- Spacing scale (4px base unit) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* ---------- Shadow (subtle, industrial — never decorative) ---------- */
+  --shadow-panel: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+  /* ---------- Motion (kept minimal on purpose) ---------- */
+  --transition-fast: 100ms ease;
+  --transition-base: 150ms ease;
+
+  /* ---------- Layout ---------- */
+  --sidebar-width: 240px;
+  --topbar-height: 56px;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}

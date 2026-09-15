@@ -1,0 +1,46 @@
+rules_version = '2';
+
+// -----------------------------------------------------------------------
+// Storage Security Rules — Shoe Last Digitization Platform
+//
+// Path convention:
+//   /projects/{projectId}/raw/{viewType}.jpg
+//   /projects/{projectId}/processed/{viewType}_nobg.png
+//   /projects/{projectId}/processed/{viewType}_contour.svg
+//
+// Ownership is validated against the matching Firestore project document,
+// since Storage rules cannot read arbitrary custom fields without a
+// cross-service lookup via firestore.get().
+// -----------------------------------------------------------------------
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isDesigner() {
+      return isSignedIn() && request.auth.token.role == 'designer';
+    }
+
+    function projectDoc(projectId) {
+      return firestore.get(/databases/(default)/documents/projects/$(projectId)).data;
+    }
+
+    function isProjectOwner(projectId) {
+      return isSignedIn() && projectDoc(projectId).clientId == request.auth.uid;
+    }
+
+    match /projects/{projectId}/{allPaths=**} {
+      allow read: if isDesigner() || isProjectOwner(projectId);
+
+      // Clients may only upload to their own project's "raw" folder.
+      // Processed assets ("processed/") are written by the client-side
+      // pipeline on behalf of the owner, or by the designer.
+      allow write: if (isDesigner() || isProjectOwner(projectId))
+                   && request.resource.size < 20 * 1024 * 1024 // 20MB safety cap
+                   && request.resource.contentType.matches('image/.*|application/octet-stream');
+    }
+  }
+}
