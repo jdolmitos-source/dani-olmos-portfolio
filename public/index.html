@@ -1,438 +1,565 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dani Olmos — Industrial Footwear Designer &amp; Technical Ops</title>
-  
+  <title>Dani Olmos — Industrial Footwear Design &amp; Digital Ops</title>
+
+  <!-- Typography matching styles.css tokens -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/sections.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Native Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="top">
 
-  <a href="#main" class="skip-link">Skip to content</a>
-
   <!-- Header -->
   <header class="site-header">
-    <a href="#top" class="header-logo">
+    <a href="#top" class="logo-mark">
       <span>D.O. — 18Y</span>
     </a>
-    <nav class="site-nav">
+
+    <nav class="primary-nav" aria-label="Main Navigation">
       <ul>
-        <li><a href="#about"><span>About</span><span>Sobre mí</span></a></li>
-        <li><a href="#workflow"><span>Workflow</span><span>Proceso</span></a></li>
-        <li><a href="#ai-design"><span>AI &amp; Systems</span><span>IA y Sistemas</span></a></li>
-        <li><a href="#projects"><span>Projects</span><span>Proyectos</span></a></li>
-        <li><a href="#skills"><span>Skills</span><span>Capacidades</span></a></li>
-        <li><a href="#contact"><span>Contact</span><span>Contacto</span></a></li>
+        <li>
+          <a href="#about">
+            <span data-lang-block="en">About</span>
+            <span data-lang-block="es">Sobre mí</span>
+          </a>
+        </li>
+        <li>
+          <a href="#workflow">
+            <span data-lang-block="en">Workflow</span>
+            <span data-lang-block="es">Proceso</span>
+          </a>
+        </li>
+        <li>
+          <a href="#ai-design">
+            <span data-lang-block="en">AI &amp; Systems</span>
+            <span data-lang-block="es">IA y Sistemas</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects">
+            <span data-lang-block="en">Projects</span>
+            <span data-lang-block="es">Proyectos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills">
+            <span data-lang-block="en">Capabilities</span>
+            <span data-lang-block="es">Capacidades</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span data-lang-block="en">Contact</span>
+            <span data-lang-block="es">Contacto</span>
+          </a>
+        </li>
       </ul>
     </nav>
-    <div class="header-actions">
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button id="lang-en" class="active" aria-pressed="true">EN</button>
-        <span aria-hidden="true">/</span>
-        <button id="lang-es" aria-pressed="false">ES</button>
+
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" id="btn-lang-en" aria-pressed="true">EN</button>
+        <span class="mono" style="color:var(--ink-faint)">/</span>
+        <button type="button" id="btn-lang-es" aria-pressed="false">ES</button>
       </div>
     </div>
   </header>
 
-  <main id="main">
+  <main>
 
-    <!-- 00 Hero Section -->
-    <section class="hero-section">
-      <div class="hero-container">
-        <div class="hero-content">
-          <p class="hero-tag">
-            <span>Industrial Footwear Design &amp; Digital Ops — Production Ready</span>
-            <span>Diseño Industrial de Calzado y Operaciones Digitales — Listo para Producción</span>
-          </p>
-          <h1 class="hero-title">Dani Olmos</h1>
-          <p class="hero-subtitle">
-            <span>Footwear Designer &amp; Technical Developer<span>/</span>18 Years Experience</span>
-            <span>Diseñador de Calzado y Desarrollador Técnico<span>/</span>18 Años de Experiencia</span>
-          </p>
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span data-lang-block="en">Industrial Footwear Design — Production Ready</span>
+            <span data-lang-block="es">Diseño Industrial de Calzado — Listo para Producción</span>
+          </div>
 
-          <div class="hero-stats">
-            <div class="stat-item">
+          <h1 class="hero-name">Dani Olmos</h1>
+
+          <div class="hero-title">
+            <span data-lang-block="en">Industrial Footwear Designer <span class="div">/</span> AI &amp; Web Ops</span>
+            <span data-lang-block="es">Diseñador Industrial de Calzado <span class="div">/</span> IA y Ops Web</span>
+          </div>
+
+          <svg class="stitch-rule" viewBox="0 0 400 14" preserveAspectRatio="none">
+            <path d="M 0 7 L 400 7" />
+          </svg>
+
+          <div class="hero-meta-row">
+            <div class="stat">
               <b>18</b>
-              <span>Years in industry</span>
-              <span>Años en la industria</span>
+              <span data-lang-block="en">Years in industry</span>
+              <span data-lang-block="es">Años en la industria</span>
             </div>
-            <div class="stat-item">
+            <div class="stat">
               <b>120+</b>
-              <span>Models to production</span>
-              <span>Modelos a producción</span>
+              <span data-lang-block="en">Models to production</span>
+              <span data-lang-block="es">Modelos a producción</span>
             </div>
-            <div class="stat-item">
+            <div class="stat">
               <b>Full-Stack</b>
-              <span>AI &amp; Web Ops</span>
-              <span>IA y Operaciones Web</span>
+              <span data-lang-block="en">AI Web &amp; Ops</span>
+              <span data-lang-block="es">IA y Web Ops</span>
             </div>
           </div>
 
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">
-              <span>View Portfolio</span><span>Ver Portafolio</span>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="#projects" class="btn primary">
+              <span data-lang-block="en">View Portfolio</span>
+              <span data-lang-block="es">Ver Portafolio</span>
             </a>
-            <a href="assets/cv.pdf" class="btn btn-secondary" target="_blank" rel="noopener">
-              <span>Download CV</span><span>Descargar CV</span>
+            <a href="assets/cv.pdf" class="btn" target="_blank" rel="noopener">
+              <span data-lang-block="en">Download CV</span>
+              <span data-lang-block="es">Descargar CV</span>
             </a>
           </div>
         </div>
 
-        <div class="hero-media">
-          <div class="video-wrapper">
+        <div class="hero-visual">
+          <div class="hero-video-frame tick-frame">
             <video autoplay loop muted playsinline>
               <source src="assets/video/hero.mp4" type="video/mp4" />
             </video>
+            <div class="hv-caption">Production Prototyping</div>
           </div>
         </div>
       </div>
 
-      <div class="scroll-indicator">
-        <span>Scroll</span><span>Desplázate</span>
-        <div class="scroll-dot"></div>
-      </div>
-    </section>
-
-    <!-- 01 About Section -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-num">01 <span>About</span><span>Sobre mí</span></p>
-          <h2>
-            <span>Eighteen years on the factory floor, at the drawing board, and in code.</span>
-            <span>Dieciocho años entre la línea de producción, la mesa de diseño y el código.</span>
-          </h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              <span>I design footwear the way it actually gets built — starting from material behavior, pattern geometry, and factory constraints, not just a sketch. Eighteen years inside industrial production offices taught me that a beautiful shoe that can't be manufactured at scale isn't a finished design.</span>
-              <span>Diseño calzado tal como realmente se construye: partiendo del comportamiento del material, la geometría del patrón y las restricciones de fábrica, no solo del boceto. Dieciocho años dentro de oficinas de producción industrial me enseñaron que un zapato hermoso que no puede fabricarse a escala no es un diseño terminado.</span>
-            </p>
-
-            <p>
-              <span>My background spans technical design, pattern engineering, and costing — calculating material yield (aprovechamiento) and shrinkage factors (factor de encaje) long before a pattern reaches the cutting table. Today, I combine that factory-floor fluency with AI-accelerated concepting and full-stack web platforms to bridge technical design and shop-floor operations.</span>
-              <span>Mi trayectoria abarca diseño técnico, ingeniería de patrones y costeo — calculando el aprovechamiento de material y el factor de encaje mucho antes de que un patrón llegue a la mesa de corte. Hoy combino ese dominio técnico con conceptualización acelerada por IA y plataformas web funcionales que optimizan las operaciones entre diseño y fábrica.</span>
-            </p>
-
-            <blockquote class="pullquote">
-              <span>Good footwear design is an argument between creativity and the cutting table — I make sure creativity wins without losing the argument.</span>
-              <span>El buen diseño de calzado es una discusión entre la creatividad y la mesa de corte — me aseguro de que la creatividad gane sin perder la discusión.</span>
-            </blockquote>
-          </div>
-
-          <div class="about-specialties">
-            <h4><span>Specialties</span><span>Especialidades</span></h4>
-            <ul class="specialties-list">
-              <li>
-                <span>Pattern engineering</span><span>Ingeniería de patrones</span>
-                <span class="badge">18Y</span>
-              </li>
-              <li>
-                <span>Material &amp; costing analysis</span><span>Análisis de materiales y costeo</span>
-                <span class="badge">15Y</span>
-              </li>
-              <li>
-                <span>Sports &amp; lifestyle footwear</span><span>Calzado deportivo y lifestyle</span>
-                <span class="badge">12Y</span>
-              </li>
-              <li>
-                <span>ShoeMaster development</span><span>Desarrollo en ShoeMaster</span>
-                <span class="badge">16Y</span>
-              </li>
-              <li>
-                <span>AI-accelerated concepting</span><span>Conceptualización con IA</span>
-                <span class="badge">Advanced</span>
-              </li>
-              <li>
-                <span>Cloud platforms &amp; automation</span><span>Plataformas cloud y automatización</span>
-                <span class="badge">Modern</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="scroll-cue">
+        <div class="line"></div>
+        <span data-lang-block="en">Scroll</span>
+        <span data-lang-block="es">Desplázate</span>
       </div>
     </section>
 
-    <!-- 02 Workflow Section -->
-    <section id="workflow" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-num">02 <span>Workflow</span><span>Proceso</span></p>
-          <h2>
-            <span>One continuous thread, from research to the production line.</span>
-            <span>Un solo hilo continuo, desde la investigación hasta la línea de producción.</span>
+    <!-- 01 ABOUT -->
+    <section id="about" class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">01 About</span>
+            <span data-lang-block="es">01 Sobre mí</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">Eighteen years between the factory floor and the drawing board.</span>
+            <span data-lang-block="es">Dieciocho años entre la línea de producción y la mesa de diseño.</span>
           </h2>
-          <p class="section-subtext">
-            <span>Every project follows the same disciplined sequence — the stitch line below is real: each stage is load-bearing for the next.</span>
-            <span>Cada proyecto sigue la misma secuencia disciplinada — la línea de costura de abajo es real: cada etapa sostiene a la siguiente.</span>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p data-lang-block="en">
+            I design footwear the way it actually gets built — starting from material behavior, pattern geometry, and factory constraints, not just a sketch. Eighteen years inside industrial production offices taught me that a beautiful shoe that can't be manufactured at scale isn't a finished design.
+          </p>
+          <p data-lang-block="es">
+            Diseño calzado tal como realmente se construye: partiendo del comportamiento del material, la geometría del patrón y las restricciones de fábrica, no solo del boceto. Dieciocho años dentro de oficinas de producción industrial me enseñaron que un zapato hermoso que no puede fabricarse a escala no es un diseño terminado.
+          </p>
+
+          <p data-lang-block="en">
+            My background spans technical design, pattern engineering, and costing — calculating material yield (aprovechamiento) and shrinkage factors (factor de encaje) long before a pattern reaches the cutting table. Today, I combine that factory-floor fluency with AI-accelerated concepting and full-stack web platforms to bridge technical design, operations, and shop-floor manufacturing.
+          </p>
+          <p data-lang-block="es">
+            Mi trayectoria abarca diseño técnico, ingeniería de patrones y costeo — calculando el aprovechamiento de material y el factor de encaje mucho antes de que un patrón llegue a la mesa de corte. Hoy combino ese dominio técnico con conceptualización acelerada por IA y plataformas web funcionales que optimizan las operaciones entre diseño y manufactura en planta.
+          </p>
+
+          <blockquote class="philosophy">
+            <span data-lang-block="en">Good footwear design is an argument between creativity and the cutting table — I make sure creativity wins without losing the argument.</span>
+            <span data-lang-block="es">El buen diseño de calzado es una discusión entre la creatividad y la mesa de corte — me aseguro de que la creatividad gane sin perder la discusión.</span>
+          </blockquote>
+        </div>
+
+        <div class="exp-panel tick-frame">
+          <h4 data-lang-block="en">Core Specialties</h4>
+          <h4 data-lang-block="es">Especialidades Centrales</h4>
+          <ul class="specialty-list">
+            <li>
+              <span data-lang-block="en">Pattern engineering</span>
+              <span data-lang-block="es">Ingeniería de patrones</span>
+              <span>18Y</span>
+            </li>
+            <li>
+              <span data-lang-block="en">Material &amp; costing analysis</span>
+              <span data-lang-block="es">Análisis de materiales y costeo</span>
+              <span>15Y</span>
+            </li>
+            <li>
+              <span data-lang-block="en">Sports &amp; lifestyle footwear</span>
+              <span data-lang-block="es">Calzado deportivo y lifestyle</span>
+              <span>12Y</span>
+            </li>
+            <li>
+              <span data-lang-block="en">ShoeMaster development</span>
+              <span data-lang-block="es">Desarrollo en ShoeMaster</span>
+              <span>16Y</span>
+            </li>
+            <li>
+              <span data-lang-block="en">AI-accelerated concepting</span>
+              <span data-lang-block="es">Conceptualización acelerada por IA</span>
+              <span>Advanced</span>
+            </li>
+            <li>
+              <span data-lang-block="en">Cloud tools &amp; automation</span>
+              <span data-lang-block="es">Plataformas cloud y automatización</span>
+              <span>Modern</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 WORKFLOW -->
+    <section id="workflow" class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">02 Workflow</span>
+            <span data-lang-block="es">02 Proceso</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">One continuous thread, from research to the production line.</span>
+            <span data-lang-block="es">Un solo hilo continuo, desde la investigación hasta la línea de producción.</span>
+          </h2>
+        </div>
+        <p class="lede">
+          <span data-lang-block="en">Every project follows a disciplined sequence: each stage is load-bearing for the next.</span>
+          <span data-lang-block="es">Cada proyecto sigue una secuencia disciplinada: cada etapa sostiene a la siguiente.</span>
+        </p>
+      </div>
+
+      <div class="workflow-steps">
+        <div class="wf-step">
+          <span class="wf-num">01</span>
+          <h4>Last &amp; Research</h4>
+          <p data-lang-block="en">Ergonomic parameters, factory constraints, and benchmark costing.</p>
+          <p data-lang-block="es">Parámetros ergonómicos, restricciones de fábrica y costeo base.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">02</span>
+          <h4>AI Ideation</h4>
+          <p data-lang-block="en">Compressing weeks of concept exploration into hours with Vizcom.</p>
+          <p data-lang-block="es">Compresión de semanas de exploración en horas con Vizcom.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">03</span>
+          <h4>3D Sculpting</h4>
+          <p data-lang-block="en">Blender sole modeling, textures, and digital prototyping.</p>
+          <p data-lang-block="es">Modelado en Blender para matrices de suela y prototipado 3D.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">04</span>
+          <h4>ShoeMaster CAD</h4>
+          <p data-lang-block="en">Shell flattening, precision grading, and shell nesting.</p>
+          <p data-lang-block="es">Aplanado de horma, escalado y moldería técnica.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">05</span>
+          <h4>Yield &amp; Costing</h4>
+          <p data-lang-block="en">Material consumption optimization and cutting table setups.</p>
+          <p data-lang-block="es">Cálculo de aprovechamiento y factores de encaje en corte.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">06</span>
+          <h4>Digital Ops</h4>
+          <p data-lang-block="en">Internal web platforms &amp; automated spec guide tracking.</p>
+          <p data-lang-block="es">Plataformas web internas y control automático de guías.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">07</span>
+          <h4>Tech Packs</h4>
+          <p data-lang-block="en">Comprehensive manufacturing sheets with strict tolerances.</p>
+          <p data-lang-block="es">Fichas técnicas industriales con tolerancias exactas.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">08</span>
+          <h4>Sampling</h4>
+          <p data-lang-block="en">First physical prototype evaluation and wear testing.</p>
+          <p data-lang-block="es">Primer prototipo físico y pruebas de calce/resistencia.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-num">09</span>
+          <h4>Production</h4>
+          <p data-lang-block="en">Factory-floor handover and mass production scaling.</p>
+          <p data-lang-block="es">Liberación a línea de manufactura y producción masiva.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 AI & DIGITAL SYSTEMS -->
+    <section id="ai-design" class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">03 AI &amp; Digital Systems</span>
+            <span data-lang-block="es">03 IA y Sistemas Digitales</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">AI as an accelerator, not a replacement.</span>
+            <span data-lang-block="es">La IA como acelerador, no como reemplazo.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="ai-banner tick-frame">
+        <p data-lang-block="en">
+          AI does not replace <em>18 years of production judgment</em> — it amplifies it. I leverage AI across two fronts: rapidly iterating industrial footwear silhouettes, and engineering custom web applications, Firebase databases, and automations that optimize factory operations.
+        </p>
+        <p data-lang-block="es">
+          La IA no reemplaza <em>18 años de criterio en manufactura</em>: los potencia. Aplico la IA en dos frentes: iteración veloz de conceptos de calzado, y desarrollo ágil de plataformas web, bases de datos Firebase y automatizaciones para sincronizar planta y operaciones.
+        </p>
+      </div>
+
+      <div style="margin-bottom:1.2rem;" class="eyebrow">
+        <span data-lang-block="en">Footwear Exploration Pipeline</span>
+        <span data-lang-block="es">Flujo de Exploración de Calzado</span>
+      </div>
+      <div class="ai-pipeline">
+        <div class="node">Sketch</div>
+        <div class="arrow">→</div>
+        <div class="node accent">Vizcom AI</div>
+        <div class="arrow">→</div>
+        <div class="node">Blender 3D</div>
+        <div class="arrow">→</div>
+        <div class="node accent">ShoeMaster</div>
+        <div class="arrow">→</div>
+        <div class="node">Production Ready</div>
+      </div>
+
+      <div style="margin-bottom:1.2rem;" class="eyebrow">
+        <span data-lang-block="en">Web &amp; Production Ops Pipeline</span>
+        <span data-lang-block="es">Flujo Web y Operaciones Técnicas</span>
+      </div>
+      <div class="ai-pipeline">
+        <div class="node">Architecture</div>
+        <div class="arrow">→</div>
+        <div class="node accent">AI Code Dev</div>
+        <div class="arrow">→</div>
+        <div class="node">Firebase DB/Auth</div>
+        <div class="arrow">→</div>
+        <div class="node accent">GitHub CI/CD</div>
+        <div class="arrow">→</div>
+        <div class="node">Automations</div>
+      </div>
+
+      <!-- Compare Widget -->
+      <div class="compare-widget tick-frame">
+        <div class="layer before">
+          <img src="assets/img/sketch-compare.jpg" alt="Technical sketch" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="layer after" id="compare-after">
+          <img src="assets/img/vizcom-compare.jpg" alt="Vizcom exploration" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="compare-handle" id="compare-handle">
+          <div class="grip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+          </div>
+        </div>
+        <input type="range" id="compare-range" min="0" max="100" value="50" aria-label="Compare slider" />
+      </div>
+      <div class="compare-labels">
+        <span data-lang-block="en">Initial Technical Sketch</span>
+        <span data-lang-block="es">Boceto Técnico Inicial</span>
+        <span data-lang-block="en">AI Render Exploration</span>
+        <span data-lang-block="es">Exploración Render IA</span>
+      </div>
+    </section>
+
+    <!-- 04 PROJECTS -->
+    <section id="projects" class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">04 Selected Projects</span>
+            <span data-lang-block="es">04 Proyectos Seleccionados</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">From problem to production.</span>
+            <span data-lang-block="es">Del problema a la producción.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Cloud Platform (Web & Ops) -->
+        <article class="project-card">
+          <div class="media-slot">
+            <div class="slot-label">
+              <span>Cloud Web Platform</span>
+              <span class="mono">Production Ops</span>
+            </div>
+          </div>
+          <div class="pc-meta">
+            <span>Web Platform / CI/CD</span>
+            <span>2026</span>
+          </div>
+          <h3>
+            <span data-lang-block="en">Shoe Last &amp; Technical Guide Platform</span>
+            <span data-lang-block="es">Plataforma de Hormas y Guías Técnicas</span>
+          </h3>
+          <p data-lang-block="en">
+            Cloud-based internal management platform designed to control shoe last specifications and production technical guides. Features real-time Firestore database synchronization, role-based access control (Firebase Auth), automated CI/CD deployment via GitHub Actions, and integration with automated communication channels.
+          </p>
+          <p data-lang-block="es">
+            Plataforma interna de gestión en la nube diseñada para centralizar el control de hormas y cambios de guías técnicas de producción. Integra base de datos en tiempo real con Firestore, control de accesos por roles (Firebase Auth), despliegue continuo automatizado con GitHub Actions y flujos de notificación operativa.
+          </p>
+        </article>
+
+        <!-- Project 2: Athletic Performance Footwear -->
+        <article class="project-card">
+          <div class="media-slot">
+            <div class="slot-label">
+              <span>Athletic Running Silhouette</span>
+              <span class="mono">ShoeMaster / Blender</span>
+            </div>
+          </div>
+          <div class="pc-meta">
+            <span>Sports Footwear</span>
+            <span>Scale Production</span>
+          </div>
+          <h3>
+            <span data-lang-block="en">Technical Running &amp; Cross-Training Silhouette</span>
+            <span data-lang-block="es">Silueta Running Técnica y Cross-Training</span>
+          </h3>
+          <p data-lang-block="en">
+            Engineered for mechanical cushioning, lightweight breathability, and aggressive outsole traction. Developed through Vizcom rapid ideation, sculpted in Blender for sole mold release verification, and scaled with ShoeMaster for precision upper yield.
+          </p>
+          <p data-lang-block="es">
+            Diseñado para amortiguación mecánica, transpirabilidad liviana y tracción técnica en suela. Desarrollado mediante ideación rápida con Vizcom, modelado en Blender para verificar salida de matriz de suela y escalado con ShoeMaster para óptimo rendimiento de corte.
+          </p>
+        </article>
+
+        <!-- Project 3: Lifestyle & Heritage Footwear -->
+        <article class="project-card">
+          <div class="media-slot">
+            <div class="slot-label">
+              <span>Vulcanized &amp; Cupsole</span>
+              <span class="mono">Costing Optimization</span>
+            </div>
+          </div>
+          <div class="pc-meta">
+            <span>Lifestyle Collection</span>
+            <span>Factory Scale</span>
+          </div>
+          <h3>
+            <span data-lang-block="en">Urban Sneaker Collection — Scaled Manufacturing</span>
+            <span data-lang-block="es">Colección Sneaker Urbana — Manufactura a Escala</span>
+          </h3>
+          <p data-lang-block="en">
+            Contemporary vulcanized and cupsole concepts engineered under strict costing benchmarks. High material yield nesting, clean assembly lines, and factory-ready spec sheets delivered directly to shop-floor technicians.
+          </p>
+          <p data-lang-block="es">
+            Conceptos contemporáneos vulcanizados y de suela preformada diseñados bajo estrictos parámetros de costo. Patrones de alto aprovechamiento, líneas limpias de aparado y fichas técnicas completas para piso de producción.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 05 CAPABILITIES -->
+    <section id="skills" class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">05 Capabilities</span>
+            <span data-lang-block="es">05 Capacidades</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">Full spec sheet.</span>
+            <span data-lang-block="es">Ficha técnica completa.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="skills-groups">
+        <div>
+          <h4 data-lang-block="en">Design &amp; CAD</h4>
+          <h4 data-lang-block="es">Diseño y CAD</h4>
+          <ul class="skill-tag-list">
+            <li>ShoeMaster CAD (16Y)</li>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+            <li>Blender 3D Modeling</li>
+            <li>Vizcom AI</li>
+            <li>Technical Tech Packs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-lang-block="en">Web &amp; Digital Ops</h4>
+          <h4 data-lang-block="es">Desarrollo Web y Ops</h4>
+          <ul class="skill-tag-list">
+            <li>HTML5 / Modern CSS / JS</li>
+            <li>Firebase Hosting &amp; Firestore</li>
+            <li>Firebase Authentication</li>
+            <li>GitHub Actions CI/CD</li>
+            <li>WhatsApp Automations</li>
+            <li>AI-Assisted Code Prototyping</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-lang-block="en">Manufacturing &amp; Ops</h4>
+          <h4 data-lang-block="es">Manufactura y Operaciones</h4>
+          <ul class="skill-tag-list">
+            <li>Factory Floor Operations (18Y)</li>
+            <li>Pattern Engineering &amp; Grading</li>
+            <li>Material Yield &amp; Costing</li>
+            <li>Technical Guide Management</li>
+            <li>Sports &amp; Lifestyle Lines</li>
+            <li>Production Tooling &amp; Lasts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 CONTACT -->
+    <section id="contact" class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">06 Contact</span>
+            <span data-lang-block="es">06 Contacto</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">Ready for international teams.</span>
+            <span data-lang-block="es">Listo para equipos internacionales.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <p class="lede" data-lang-block="en">
+            Open to opportunities in footwear design, development, and technical operations across Europe, especially the Netherlands. Let's talk about how 18 years of production craftsmanship combined with modern AI workflows can fit your team.
+          </p>
+          <p class="lede" data-lang-block="es">
+            Abierto a oportunidades de diseño, desarrollo y operaciones técnicas en Europa, especialmente Países Bajos. Conversemos sobre cómo 18 años de experiencia en manufactura combinados con flujos ágiles de IA pueden sumar valor a tu equipo.
           </p>
         </div>
 
-        <div class="workflow-timeline">
-          <div class="workflow-stage">
-            <span class="stage-step">01</span>
-            <h4><span>Research &amp; Last Setup</span><span>Investigación y Horma</span></h4>
-            <p>
-              <span>Ergonomic parameters, factory constraints, and target cost benchmark definition.</span>
-              <span>Parámetros ergonómicos, restricciones de planta y costeo objetivo de referencia.</span>
-            </p>
-          </div>
-          <div class="workflow-stage">
-            <span class="stage-step">02</span>
-            <h4><span>AI &amp; Visual Exploration</span><span>IA y Exploración Visual</span></h4>
-            <p>
-              <span>Compressing weeks of concept drafting into rapid, high-fidelity iterations with Vizcom and 3D modeling.</span>
-              <span>Compresión de semanas de bocetado en iteraciones rápidas de alta fidelidad con Vizcom y modelado 3D.</span>
-            </p>
-          </div>
-          <div class="workflow-stage">
-            <span class="stage-step">03</span>
-            <h4><span>3D Form &amp; Soles</span><span>Forma 3D y Suelas</span></h4>
-            <p>
-              <span>Blender modeling for sole textures, ergonomics, volume distribution, and digital prototyping.</span>
-              <span>Modelado en Blender para texturas de suela, ergonomía, distribución de volúmenes y prototipos digitales.</span>
-            </p>
-          </div>
-          <div class="workflow-stage">
-            <span class="stage-step">04</span>
-            <h4><span>Pattern Engineering</span><span>Ingeniería de Patrones</span></h4>
-            <p>
-              <span>ShoeMaster flattening, precision shell grading, piece nesting, and material yield calculations.</span>
-              <span>Desarrollo en ShoeMaster, escalado de moldería, anidado de piezas y aprovechamiento de corte.</span>
-            </p>
-          </div>
-          <div class="workflow-stage">
-            <span class="stage-step">05</span>
-            <h4><span>Digital Ops &amp; Production</span><span>Operaciones y Producción</span></h4>
-            <p>
-              <span>Technical spec sheets, Cloud platforms for last tracking, and factory-ready manufacturing handover.</span>
-              <span>Fichas técnicas, plataformas en la nube para control de guías/hormas y pase directo a planta.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 AI & Digital Systems -->
-    <section id="ai-design" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-num">03 <span>AI &amp; Digital Systems</span><span>IA y Sistemas Digitales</span></p>
-          <h2>
-            <span>Beyond renders: AI as a full-stack accelerator.</span>
-            <span>Más allá del render: la IA como acelerador integral.</span>
-          </h2>
-        </div>
-
-        <div class="ai-overview">
-          <p>
-            <span>AI does not replace <em>18 years of manufacturing judgment</em> — it amplifies it. I leverage modern AI tools on two fronts: accelerating early-stage aesthetic exploration, and engineering custom cloud applications, databases, and automations that optimize factory communications and reduce production lead times.</span>
-            <span>La IA no reemplaza <em>18 años de criterio en manufactura</em>: los potencia. Aplico herramientas modernas de IA en dos frentes: acelerar la exploración estética de conceptos y programar plataformas web funcionales, bases de datos y automatizaciones que optimizan la comunicación con planta y reducen tiempos de desarrollo.</span>
-          </p>
-        </div>
-
-        <div class="pipelines-container">
-          <!-- Footwear Pipeline -->
-          <div class="pipeline-block">
-            <h4><span>Footwear Design Pipeline</span><span>Flujo de Diseño de Calzado</span></h4>
-            <div class="pipeline-tags">
-              <span>Sketch</span><span>→</span>
-              <span>Vizcom AI</span><span>→</span>
-              <span>Blender 3D</span><span>→</span>
-              <span>ShoeMaster CAD</span><span>→</span>
-              <span>Factory Ready</span>
-            </div>
-          </div>
-
-          <!-- Digital Ops Pipeline -->
-          <div class="pipeline-block">
-            <h4><span>Web &amp; Ops Pipeline</span><span>Flujo Web y Operaciones</span></h4>
-            <div class="pipeline-tags">
-              <span>Prompt &amp; Architecture</span><span>→</span>
-              <span>Vanilla JS Apps</span><span>→</span>
-              <span>Firebase (Auth/DB)</span><span>→</span>
-              <span>GitHub Actions CI/CD</span><span>→</span>
-              <span>Messaging Automations</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Before / After Visual Comparison -->
-        <div class="comparison-card">
-          <div class="comparison-visual">
-            <div class="comp-img-wrapper">
-              <img src="assets/img/sketch-compare.jpg" alt="Initial footwear technical sketch" />
-            </div>
-            <div class="comp-img-wrapper">
-              <img src="assets/img/vizcom-compare.jpg" alt="AI-accelerated visual exploration" />
-            </div>
-          </div>
-          <div class="comp-labels">
-            <span>Technical Sketch / Boceto</span>
-            <span>AI Exploration / Exploración IA</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 Projects Section -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-num">04 <span>Selected Projects</span><span>Proyectos Seleccionados</span></p>
-          <h2>
-            <span>From concept to production line.</span>
-            <span>Del concepto a la línea de producción.</span>
-          </h2>
-        </div>
-
-        <div class="projects-grid">
-          
-          <!-- Project 1: Cloud Platform (Web & Ops) -->
-          <article class="project-card">
-            <div class="project-info">
-              <span class="project-category">Web Platform &amp; Production Ops</span>
-              <h3><span>Shoe Last &amp; Technical Guide Platform</span><span>Plataforma de Hormas y Guías Técnicas</span></h3>
-              <p>
-                <span>Cloud-based internal management platform designed to control shoe last specifications and production technical guides. Features real-time Firestore database synchronization, role-based access control (Firebase Auth), automated CI/CD deployment via GitHub Actions, and integration with automated communication channels.</span>
-                <span>Plataforma interna de gestión en la nube diseñada para centralizar el control de hormas y cambios de guías técnicas de producción. Integra base de datos en tiempo real con Firestore, control de accesos por roles (Firebase Auth), despliegue continuo automatizado con GitHub Actions y flujos de notificación operativa.</span>
-              </p>
-              <ul class="project-tags">
-                <li>Firebase Hosting &amp; Firestore</li>
-                <li>Firebase Authentication</li>
-                <li>Vanilla JS / ES Modules</li>
-                <li>GitHub Actions CI/CD</li>
-                <li>Process Automation</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Project 2: High-Performance Athletic Footwear -->
-          <article class="project-card">
-            <div class="project-info">
-              <span class="project-category">Sports Footwear &amp; 3D Modeling</span>
-              <h3><span>Technical Running &amp; Cross-Training Silhouette</span><span>Silueta Running Técnica y Cross-Training</span></h3>
-              <p>
-                <span>Engineered for mechanical cushioning, lightweight breathability, and aggressive outsole traction. Developed through Vizcom rapid ideation, sculpted in Blender for sole mold release verification, and scaled with ShoeMaster for precision upper yield.</span>
-                <span>Diseñado para amortiguación mecánica, transpirabilidad liviana y tracción técnica en suela. Desarrollado mediante ideación rápida con Vizcom, modelado en Blender para verificar salida de matriz de suela y escalado con ShoeMaster para óptimo rendimiento de corte.</span>
-              </p>
-              <ul class="project-tags">
-                <li>ShoeMaster CAD</li>
-                <li>Blender 3D</li>
-                <li>Vizcom AI</li>
-                <li>Pattern Engineering</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Project 3: Lifestyle & Heritage Footwear -->
-          <article class="project-card">
-            <div class="project-info">
-              <span class="project-category">Lifestyle &amp; Industrial Production</span>
-              <h3><span>Urban Sneaker Collection — Scaled Manufacturing</span><span>Colección Sneaker Urbana — Manufactura a Escala</span></h3>
-              <p>
-                <span>Contemporary vulcanized and cupsole concepts engineered under strict costing benchmarks. High material yield nesting, clean assembly lines, and factory-ready spec sheets delivered directly to shop-floor technicians.</span>
-                <span>Conceptos contemporáneos vulcanizados y de suela preformada diseñados bajo estrictos parámetros de costo. Patrones de alto aprovechamiento, líneas limpias de aparado y fichas técnicas completas para piso de producción.</span>
-              </p>
-              <ul class="project-tags">
-                <li>Material Yield &amp; Costing</li>
-                <li>Adobe Illustrator</li>
-                <li>Production Spec Sheets</li>
-                <li>Quality Standards</li>
-              </ul>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 Capabilities Section -->
-    <section id="skills" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-num">05 <span>Capabilities</span><span>Capacidades</span></p>
-          <h2><span>Full spec sheet.</span><span>Ficha técnica completa.</span></h2>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Column 1: Footwear & Design -->
-          <div class="skills-card">
-            <h4><span>Design &amp; CAD</span><span>Diseño y CAD</span></h4>
-            <ul class="skills-list">
-              <li>ShoeMaster CAD (16Y)</li>
-              <li>Adobe Illustrator</li>
-              <li>Adobe Photoshop</li>
-              <li>Blender 3D Modeling</li>
-              <li>Vizcom AI &amp; Diffusion Tools</li>
-              <li>Technical Spec Sheets (Tech Packs)</li>
-            </ul>
-          </div>
-
-          <!-- Column 2: Web & Digital Ops -->
-          <div class="skills-card">
-            <h4><span>Web &amp; Digital Ops</span><span>Desarrollo Web y Ops</span></h4>
-            <ul class="skills-list">
-              <li>Web Development (HTML5 / Modern CSS / JS)</li>
-              <li>Firebase (Hosting, Firestore, Auth)</li>
-              <li>Git &amp; GitHub Workflows (CI/CD Actions)</li>
-              <li>WhatsApp Business Automations</li>
-              <li>AI-Assisted Full-Stack Prototyping</li>
-              <li>Data Schemas &amp; User Access Roles</li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Factory & Management -->
-          <div class="skills-card">
-            <h4><span>Manufacturing &amp; Ops</span><span>Manufactura y Operaciones</span></h4>
-            <ul class="skills-list">
-              <li>Industrial Production Line (18Y)</li>
-              <li>Pattern Engineering &amp; Grading</li>
-              <li>Material Yield &amp; Costing Calculations</li>
-              <li>Technical Production Guide Control</li>
-              <li>Last Digitization &amp; Calibration</li>
-              <li>Sports &amp; Lifestyle Product Lines</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 Contact Section -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-num">06 <span>Contact</span><span>Contacto</span></p>
-          <h2>
-            <span>Ready for international teams.</span>
-            <span>Listo para equipos internacionales.</span>
-          </h2>
-        </div>
-
-        <div class="contact-content">
-          <p>
-            <span>Open to opportunities in footwear design, product development, and technical operations across Europe, especially the Netherlands. Let's discuss how 18 years of production craftsmanship combined with modern AI and digital workflows can drive impact on your team.</span>
-            <span>Abierto a oportunidades de diseño de calzado, desarrollo de producto y operaciones técnicas en Europa, especialmente Países Bajos. Conversemos sobre cómo 18 años de experiencia en producción combinados con flujos modernos de IA y herramientas digitales pueden sumar valor a tu equipo.</span>
-          </p>
-
-          <div class="contact-links">
-            <a href="mailto:jd.olmitos@gmail.com" class="contact-link">Email</a>
-            <a href="https://www.linkedin.com/in/dani-olmos/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="assets/cv.pdf" class="contact-link" target="_blank" rel="noopener">
-              <span>Curriculum (PDF)</span><span>Currículum (PDF)</span>
-            </a>
-          </div>
+        <div class="contact-links">
+          <a href="mailto:jd.olmitos@gmail.com">
+            <span>Email</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/dani-olmos/" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+          <a href="assets/cv.pdf" target="_blank" rel="noopener">
+            <span data-lang-block="en">Curriculum (PDF)</span>
+            <span data-lang-block="es">Currículum (PDF)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -440,16 +567,65 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <span>&copy; <span id="current-year">2026</span> — <span>Dani Olmos. All rights reserved.</span><span>Dani Olmos. Todos los derechos reservados.</span></span>
-      <div class="footer-tech">
-        <span>Built with vanilla HTML/CSS/JS — automated via GitHub Actions &amp; hosted on Firebase</span>
-        <span>Construido con HTML/CSS/JS puro — automatizado con GitHub Actions y alojado en Firebase</span>
-      </div>
+  <footer class="site-footer wrap">
+    <div>
+      &copy; 2026 Dani Olmos. 
+      <span data-lang-block="en">All rights reserved.</span>
+      <span data-lang-block="es">Todos los derechos reservados.</span>
+    </div>
+    <div>
+      <span data-lang-block="en">Vanilla HTML/CSS/JS — GitHub Actions CI/CD — Firebase Hosting</span>
+      <span data-lang-block="es">HTML/CSS/JS Puro — CI/CD con GitHub Actions — Firebase Hosting</span>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Script for Language Switcher & Comparison Slider -->
+  <script>
+    // Language Switcher Logic
+    const btnEn = document.getElementById('btn-lang-en');
+    const btnEs = document.getElementById('btn-lang-es');
+    const htmlEl = document.documentElement;
+
+    function setLanguage(lang) {
+      htmlEl.setAttribute('data-lang', lang);
+      if (lang === 'en') {
+        btnEn.setAttribute('aria-pressed', 'true');
+        btnEs.setAttribute('aria-pressed', 'false');
+      } else {
+        btnEn.setAttribute('aria-pressed', 'false');
+        btnEs.setAttribute('aria-pressed', 'true');
+      }
+      localStorage.setItem('preferred-lang', lang);
+    }
+
+    btnEn.addEventListener('click', () => setLanguage('en'));
+    btnEs.addEventListener('click', () => setLanguage('es'));
+
+    const savedLang = localStorage.getItem('preferred-lang') || 'en';
+    setLanguage(savedLang);
+
+    // Image Comparison Slider Logic
+    const range = document.getElementById('compare-range');
+    const afterLayer = document.getElementById('compare-after');
+    const handle = document.getElementById('compare-handle');
+
+    if (range && afterLayer && handle) {
+      range.addEventListener('input', (e) => {
+        const val = e.target.value;
+        afterLayer.style.clipPath = `inset(0 0 0 ${val}%)`;
+        handle.style.left = `${val}%`;
+      });
+    }
+
+    // Header scroll background toggle
+    const siteHeader = document.querySelector('header.site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
