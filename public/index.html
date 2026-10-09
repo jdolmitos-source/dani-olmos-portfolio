@@ -13,13 +13,13 @@
   <!-- Native Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* Estilos para el carrusel multimedia y galería técnica */
+    /* Estilos mejorados para carrusel, galería y videos */
     .carousel-container {
       position: relative;
       width: 100%;
       height: 440px;
       overflow: hidden;
-      background: var(--ink-faint, #111);
+      background: #0b0b0b;
       border-radius: 4px;
       margin-bottom: 1.5rem;
     }
@@ -39,12 +39,11 @@
       opacity: 1;
       z-index: 2;
     }
-    .carousel-slide img,
-    .carousel-slide video {
+    .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: #0b0b0b;
+      background: transparent;
     }
     .carousel-caption {
       position: absolute;
@@ -99,7 +98,7 @@
     .gallery-img {
       width: 100%;
       height: 180px;
-      background: #111;
+      background: transparent;
       object-fit: contain;
       border-radius: 2px;
     }
@@ -122,6 +121,29 @@
       margin: 0;
       font-size: 0.8rem;
       color: var(--text-muted, #aaa);
+    }
+
+    .video-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .video-card {
+      background: var(--card-bg, #161616);
+      border: 1px solid var(--border-color, #2a2a2a);
+      padding: 1rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .video-card video {
+      width: 100%;
+      height: 240px;
+      background: #000;
+      object-fit: contain;
+      border-radius: 2px;
     }
   </style>
 </head>
@@ -414,337 +436,192 @@
             <span data-lang-block="es">03 IA y Sistemas Digitales</span>
           </div>
           <h2 class="h2">
-            <span data-lang-block="en">Pattern Engineering, AI Motion &amp; Complete Design Archive.</span>
-            <span data-lang-block="es">Ingeniería de Patrones, Animación IA y Archivo Completo.</span>
+            <span data-lang-block="en">Complete Design Archive (All 20+ Silhouettes).</span>
+            <span data-lang-block="es">Archivo Completo de Diseño (Las 20+ Siluetas).</span>
           </h2>
         </div>
       </div>
 
       <div class="ai-banner tick-frame" style="margin-bottom: 2rem;">
         <p data-lang-block="en">
-          Bridging industrial pattern engineering, manual technical sketches, and AI-accelerated video prototyping. Explore technical guides, manual drafting blueprints, and complete silhouette collections below.
+          Interactive slideshow featuring all design iterations across Sport, Dama, Niño/a, Hombre, Lines &amp; Color, and Blender 3D modeling, followed by the complete categorized gallery.
         </p>
         <p data-lang-block="es">
-          Puente entre la ingeniería de patrones industriales, los bocetos técnicos a mano y el prototipado en video acelerado por IA. Explora guías técnicas, planos de patronaje manual y colecciones completas a continuación.
+          Presentación interactiva que incluye todas las iteraciones de diseño en Sport, Dama, Niño/a, Hombre, Líneas y Color, y modelado 3D en Blender, seguida de la galería completa categorizada.
         </p>
       </div>
 
-      <!-- CARRUSEL MULTIMEDIA AMPLIADO (CON VIDEOS DE VIZCOM Y ARCHIVOS) -->
+      <!-- CARRUSEL CON LAS 20 IMÁGENES -->
       <div style="margin-bottom:0.5rem;" class="eyebrow">
-        <span data-lang-block="en">Multimedia Presentation Showcase</span>
-        <span data-lang-block="es">Presentación Multimedia Destacada</span>
+        <span data-lang-block="en">Interactive Slideshow Showcase</span>
+        <span data-lang-block="es">Presentación Interactiva de Diseños</span>
       </div>
       <div class="carousel-container tick-frame" id="work-carousel">
-        <div class="carousel-slide active">
-          <video autoplay loop muted playsinline>
-            <source src="assets/video/Vizcom animation walking.mp4" type="video/mp4" />
-          </video>
-          <div class="carousel-caption"><span>01 / Vizcom Walking Prototyping Animation</span></div>
-        </div>
-        <div class="carousel-slide">
-          <video autoplay loop muted playsinline>
-            <source src="assets/video/VIZCOM workflow.mp4" type="video/mp4" />
-          </video>
-          <div class="carousel-caption"><span>02 / Vizcom AI Ideation Workflow</span></div>
-        </div>
-        <div class="carousel-slide">
-          <img src="assets/img/ensambling guide.JPG" alt="Ensambling Guide" />
-          <div class="carousel-caption"><span>03 / Industrial Ensambling &amp; Skiving Guide</span></div>
-        </div>
-        <div class="carousel-slide">
-          <img src="assets/img/Artboard-1.png" alt="Pattern Draft" />
-          <div class="carousel-caption"><span>04 / Manual Pattern Engineering &amp; Drafting</span></div>
-        </div>
-        <div class="carousel-slide">
-          <img src="assets/img/Sketch1.png" alt="Sketch Analysis" />
-          <div class="carousel-caption"><span>05 / Technical Sketch Breakdown</span></div>
-        </div>
+        <div class="carousel-slide active"><img src="assets/img/Blender.PNG" alt="Blender" /><div class="carousel-caption"><span>Blender 3D Sole &amp; Prototype Sculpting</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador Lines.PNG" alt="Lines" /><div class="carousel-caption"><span>Technical Pattern Lines</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador color.PNG" alt="Color" /><div class="carousel-caption"><span>Colorway &amp; Material Mapping</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 1.jpg" alt="Sport 1" /><div class="carousel-caption"><span>Sport Silhouette I</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 2.jpg" alt="Sport 2" /><div class="carousel-caption"><span>Sport Silhouette II</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 3.jpg" alt="Niño 3" /><div class="carousel-caption"><span>Children's Line I</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 4.jpg" alt="Niño 4" /><div class="carousel-caption"><span>Children's Line II</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 5.jpg" alt="Niño 5" /><div class="carousel-caption"><span>Children's Line III</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 6.jpg" alt="Hombre 6" /><div class="carousel-caption"><span>Men's Casual I</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 7.jpg" alt="Hombre 7" /><div class="carousel-caption"><span>Men's Boot Silhouette</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 8.jpg" alt="Hombre 8" /><div class="carousel-caption"><span>Men's Mid-Top Sneaker</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 9.jpg" alt="Sport 9" /><div class="carousel-caption"><span>Sport Slip-On</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 10.jpg" alt="Niño 10" /><div class="carousel-caption"><span>Children's High-Top</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 11.jpg" alt="Niño 11" /><div class="carousel-caption"><span>Youth Sport Trainer</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 12.jpg" alt="Sport 12" /><div class="carousel-caption"><span>Sport Runner Classic</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 13.jpg" alt="Niño 13" /><div class="carousel-caption"><span>Junior Heritage Sneaker</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 14.jpg" alt="Dama 14" /><div class="carousel-caption"><span>Women's Casual Flat</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 15.jpg" alt="Niño 15" /><div class="carousel-caption"><span>Infant Double-Strap</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 16.jpg" alt="Niño 16" /><div class="carousel-caption"><span>School White Sneaker</span></div></div>
+        <div class="carousel-slide"><img src="assets/img/Ilustrador 17.png" alt="Dama 17" /><div class="carousel-caption"><span>Women's Loafer &amp; Sole</span></div></div>
         <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous slide">&#10094;</button>
         <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next slide">&#10095;</button>
       </div>
 
-      <!-- GALERÍA TÉCNICA Y DE ARCHIVO -->
+      <!-- GALERÍA COMPLETA DE LAS 20 IMÁGENES -->
       <div style="margin-top: 3rem; margin-bottom: 1.2rem;" class="eyebrow">
-        <span data-lang-block="en">Technical Engineering &amp; Design Archive</span>
-        <span data-lang-block="es">Archivo de Ingeniería Técnica y Diseño</span>
+        <span data-lang-block="en">Complete Gallery Archive</span>
+        <span data-lang-block="es">Archivo de Galería Completa</span>
       </div>
 
       <div class="gallery-grid">
-
-        <!-- 1. Ensambling Guide -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/ensambling guide.JPG" alt="Ensambling guide" class="gallery-img" />
-          <span class="badge">Tech Guide</span>
-          <h4>Industrial Skiving &amp; Assembly Guide</h4>
-          <p>Factory cutting and assembly specifications.</p>
-        </div>
-
-        <!-- 2. Manual Draft (Artboard-1) -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Artboard-1.png" alt="Manual pattern draft" class="gallery-img" />
-          <span class="badge">Manual Draft</span>
-          <h4>Pattern Engineering Lines</h4>
-          <p>Precision geometric upper pattern layout.</p>
-        </div>
-
-        <!-- 3. Sketch Analytics -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Sketch1.png" alt="Sketch analysis" class="gallery-img" />
-          <span class="badge">Tech Sketch</span>
-          <h4>Technical Sketch Breakdown</h4>
-          <p>Detailed material callouts and annotations.</p>
-        </div>
-
-        <!-- 4. Blender -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Blender.PNG" alt="Blender 3D" class="gallery-img" />
-          <span class="badge">Blender 3D</span>
-          <h4>3D Sole &amp; Prototype</h4>
-          <p>Digital sole modeling and volumetric sculpture.</p>
-        </div>
-
-        <!-- 5. Lines -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador Lines.PNG" alt="Lines" class="gallery-img" />
-          <span class="badge">Lines &amp; Color</span>
-          <h4>Technical Pattern Lines</h4>
-          <p>Vector geometry and precision technical linework.</p>
-        </div>
-
-        <!-- 6. Color -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador color.PNG" alt="Color" class="gallery-img" />
-          <span class="badge">Lines &amp; Color</span>
-          <h4>Colorway Mapping</h4>
-          <p>Color distribution and aesthetic material study.</p>
-        </div>
-
-        <!-- 7. Sport 1 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 1.jpg" alt="Sport 1" class="gallery-img" />
-          <span class="badge">Sport</span>
-          <h4>Sport Silhouette I</h4>
-          <p>High-performance urban athletic sneaker.</p>
-        </div>
-
-        <!-- 8. Sport 2 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 2.jpg" alt="Sport 2" class="gallery-img" />
-          <span class="badge">Sport</span>
-          <h4>Sport Silhouette II</h4>
-          <p>Running and multi-surface traction model.</p>
-        </div>
-
-        <!-- 9. Niño 3 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 3.jpg" alt="Niño/a" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Children's Line I</h4>
-          <p>Ergonomic school shoe with secure velcro strap.</p>
-        </div>
-
-        <!-- 10. Niño 4 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 4.jpg" alt="Niño 4" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Children's Line II</h4>
-          <p>Licensed character slip-on casual style.</p>
-        </div>
-
-        <!-- 11. Niño 5 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 5.jpg" alt="Niño 5" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Children's Line III</h4>
-          <p>Comfortable low-top toddler sneaker.</p>
-        </div>
-
-        <!-- 12. Hombre 6 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 6.jpg" alt="Hombre 6" class="gallery-img" />
-          <span class="badge">Hombre</span>
-          <h4>Men's Casual I</h4>
-          <p>Urban low-profile everyday sneaker.</p>
-        </div>
-
-        <!-- 13. Hombre 7 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 7.jpg" alt="Hombre 7" class="gallery-img" />
-          <span class="badge">Hombre</span>
-          <h4>Men's Boot Silhouette</h4>
-          <p>Rugged outdoor ankle boot architecture.</p>
-        </div>
-
-        <!-- 14. Hombre 8 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 8.jpg" alt="Hombre 8" class="gallery-img" />
-          <span class="badge">Hombre</span>
-          <h4>Men's Mid-Top Sneaker</h4>
-          <p>Structured athletic lifestyle high-top.</p>
-        </div>
-
-        <!-- 15. Sport 9 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 9.jpg" alt="Sport 9" class="gallery-img" />
-          <span class="badge">Sport</span>
-          <h4>Sport Slip-On</h4>
-          <p>Lightweight elastic training footwear.</p>
-        </div>
-
-        <!-- 16. Niño 10 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 10.jpg" alt="Niño 10" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Children's High-Top</h4>
-          <p>Ankle-support youth canvas style.</p>
-        </div>
-
-        <!-- 17. Niño 11 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 11.jpg" alt="Niño 11" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Youth Sport Trainer</h4>
-          <p>Active play lightweight sneaker.</p>
-        </div>
-
-        <!-- 18. Sport 12 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 12.jpg" alt="Sport 12" class="gallery-img" />
-          <span class="badge">Sport</span>
-          <h4>Sport Runner Classic</h4>
-          <p>Clean leather-finish athletic baseline.</p>
-        </div>
-
-        <!-- 19. Niño 13 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 13.jpg" alt="Niño 13" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Junior Heritage Sneaker</h4>
-          <p>Printed pattern casual junior shoe.</p>
-        </div>
-
-        <!-- 20. Dama 14 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 14.jpg" alt="Dama 14" class="gallery-img" />
-          <span class="badge">Dama</span>
-          <h4>Women's Casual Flat</h4>
-          <p>Comfortable everyday lifestyle flat.</p>
-        </div>
-
-        <!-- 21. Niño 15 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 15.jpg" alt="Niño 15" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>Infant Double-Strap</h4>
-          <p>Secure double velcro baby shoe.</p>
-        </div>
-
-        <!-- 22. Niño 16 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 16.jpg" alt="Niño 16" class="gallery-img" />
-          <span class="badge">Niño / Niña</span>
-          <h4>School White Sneaker</h4>
-          <p>Classic clean institutional school shoe.</p>
-        </div>
-
-        <!-- 23. Dama 17 -->
-        <div class="gallery-card tick-frame">
-          <img src="assets/img/Ilustrador 17.png" alt="Dama 17" class="gallery-img" />
-          <span class="badge">Dama</span>
-          <h4>Women's Loafer &amp; Sole</h4>
-          <p>Elegant professional moccasin with outsole view.</p>
-        </div>
-
+        <div class="gallery-card tick-frame"><img src="assets/img/Blender.PNG" alt="Blender" class="gallery-img" /><span class="badge">Blender 3D</span><h4>3D Sole &amp; Prototype</h4><p>Digital sole modeling.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador Lines.PNG" alt="Lines" class="gallery-img" /><span class="badge">Lines &amp; Color</span><h4>Technical Pattern Lines</h4><p>Vector geometry.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador color.PNG" alt="Color" class="gallery-img" /><span class="badge">Lines &amp; Color</span><h4>Colorway Mapping</h4><p>Material study.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 1.jpg" alt="Sport 1" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Silhouette I</h4><p>Athletic sneaker.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 2.jpg" alt="Sport 2" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Silhouette II</h4><p>Running model.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 3.jpg" alt="Niño 3" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's Line I</h4><p>Ergonomic school shoe.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 4.jpg" alt="Niño 4" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's Line II</h4><p>Slip-on casual style.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 5.jpg" alt="Niño 5" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's Line III</h4><p>Toddler sneaker.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 6.jpg" alt="Hombre 6" class="gallery-img" /><span class="badge">Hombre</span><h4>Men's Casual I</h4><p>Everyday sneaker.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 7.jpg" alt="Hombre 7" class="gallery-img" /><span class="badge">Hombre</span><h4>Men's Boot Silhouette</h4><p>Outdoor ankle boot.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 8.jpg" alt="Hombre 8" class="gallery-img" /><span class="badge">Hombre</span><h4>Men's Mid-Top Sneaker</h4><p>Lifestyle high-top.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 9.jpg" alt="Sport 9" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Slip-On</h4><p>Elastic training footwear.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 10.jpg" alt="Niño 10" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's High-Top</h4><p>Canvas style.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 11.jpg" alt="Niño 11" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Youth Sport Trainer</h4><p>Lightweight sneaker.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 12.jpg" alt="Sport 12" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Runner Classic</h4><p>Leather-finish baseline.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 13.jpg" alt="Niño 13" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Junior Heritage Sneaker</h4><p>Printed pattern casual.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 14.jpg" alt="Dama 14" class="gallery-img" /><span class="badge">Dama</span><h4>Women's Casual Flat</h4><p>Everyday flat.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 15.jpg" alt="Niño 15" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Infant Double-Strap</h4><p>Velcro baby shoe.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 16.jpg" alt="Niño 16" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>School White Sneaker</h4><p>Clean institutional shoe.</p></div>
+        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 17.png" alt="Dama 17" class="gallery-img" /><span class="badge">Dama</span><h4>Women's Loafer &amp; Sole</h4><p>Professional moccasin.</p></div>
       </div>
 
     </section>
 
-    <!-- 04 PROJECTS -->
-    <section id="projects" class="wrap">
+    <!-- SECCIÓN NUEVA DEDICADA A VIDEOS CON CONTROLES COMPLETOS -->
+    <section id="videos" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
           <div class="eyebrow">
-            <span data-lang-block="en">04 Selected Projects</span>
-            <span data-lang-block="es">04 Proyectos Seleccionados</span>
+            <span data-lang-block="en">AI Prototyping &amp; Motion Videos</span>
+            <span data-lang-block="es">Prototipado en Video e IA</span>
           </div>
           <h2 class="h2">
-            <span data-lang-block="en">From problem to production.</span>
-            <span data-lang-block="es">Del problema a la producción.</span>
+            <span data-lang-block="en">Full Motion &amp; Workflow Showcase.</span>
+            <span data-lang-block="es">Demostración Completa en Movimiento y Flujo.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="video-showcase-grid">
+        <div class="video-card tick-frame">
+          <video controls preload="metadata">
+            <source src="assets/video/Vizcom animation walking.mp4" type="video/mp4" />
+          </video>
+          <h4>Vizcom Walking Prototyping Animation</h4>
+          <p>Full motion demonstration showcasing AI-driven footwear movement and dynamic rendering.</p>
+        </div>
+        <div class="video-card tick-frame">
+          <video controls preload="metadata">
+            <source src="assets/video/VIZCOM workflow.mp4" type="video/mp4" />
+          </video>
+          <h4>Vizcom AI Ideation Workflow</h4>
+          <p>Step-by-step generative AI prototyping pipeline used during rapid conceptualization stages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 PROJECTS (CON TUS 3 ÚLTIMAS IMÁGENES TÉCNICAS Y DE PATRONAJE) -->
+    <section id="projects" class="wrap" style="margin-top: 4rem;">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span data-lang-block="en">04 Selected Projects &amp; Technical Engineering</span>
+            <span data-lang-block="es">04 Proyectos Seleccionados e Ingeniería Técnica</span>
+          </div>
+          <h2 class="h2">
+            <span data-lang-block="en">From manual drafting to factory production.</span>
+            <span data-lang-block="es">Del patronaje manual a la producción en fábrica.</span>
           </h2>
         </div>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Project 1: Cloud Platform (Web & Ops) -->
+        <!-- Project 1: Skiving & Assembly Guide -->
         <article class="project-card">
-          <div class="media-slot">
-            <div class="slot-label">
-              <span>Cloud Web Platform</span>
-              <span class="mono">Production Ops</span>
-            </div>
+          <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/img/ensambling guide.JPG" alt="Ensambling guide" style="max-height:100%; max-width:100%; object-fit:contain;" />
           </div>
           <div class="pc-meta">
-            <span>Web Platform / CI/CD</span>
-            <span>2026</span>
+            <span>Tech Guide / Skiving Specs</span>
+            <span>18Y Expertise</span>
           </div>
           <h3>
-            <span data-lang-block="en">Shoe Last &amp; Technical Guide Platform</span>
-            <span data-lang-block="es">Plataforma de Hormas y Guías Técnicas</span>
+            <span data-lang-block="en">Industrial Skiving &amp; Assembly Guide</span>
+            <span data-lang-block="es">Guía Industrial de Desbastado y Armado</span>
           </h3>
           <p data-lang-block="en">
-            Cloud-based internal management platform designed to control shoe last specifications and production technical guides. Features real-time Firestore database synchronization, role-based access control (Firebase Auth), automated CI/CD deployment via GitHub Actions, and integration with automated communication channels.
+            Comprehensive factory cutting, skiving (rebaje y chaflán), and assembly specifications engineered under Bata/Manaco standards to guarantee precise upper construction.
           </p>
           <p data-lang-block="es">
-            Plataforma interna de gestión en la nube diseñada para centralizar el control de hormas y cambios de guías técnicas de producción. Integra base de datos en tiempo real con Firestore, control de accesos por roles (Firebase Auth), despliegue continuo automatizado con GitHub Actions y flujos de notificación operativa.
+            Especificaciones integrales de corte, desbastado (rebaje y chaflán) y armado de fábrica diseñadas bajo estándares Bata/Manaco para garantizar la construcción precisa del corte.
           </p>
         </article>
 
-        <!-- Project 2: Athletic Performance Footwear -->
+        <!-- Project 2: Manual Pattern Engineering (Artboard-1) -->
         <article class="project-card">
-          <div class="media-slot">
-            <div class="slot-label">
-              <span>Athletic Running Silhouette</span>
-              <span class="mono">ShoeMaster / Blender</span>
-            </div>
+          <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/img/Artboard-1.png" alt="Manual pattern draft" style="max-height:100%; max-width:100%; object-fit:contain;" />
           </div>
           <div class="pc-meta">
-            <span>Sports Footwear</span>
-            <span>Scale Production</span>
+            <span>Manual Draft / Pattern Layout</span>
+            <span>Geometric Precision</span>
           </div>
           <h3>
-            <span data-lang-block="en">Technical Running &amp; Cross-Training Silhouette</span>
-            <span data-lang-block="es">Silueta Running Técnica y Cross-Training</span>
+            <span data-lang-block="en">Manual Pattern Engineering &amp; Drafting</span>
+            <span data-lang-block="es">Ingeniería de Patrones y Trazado Manual</span>
           </h3>
           <p data-lang-block="en">
-            Engineered for mechanical cushioning, lightweight breathability, and aggressive outsole traction. Developed through Vizcom rapid ideation, sculpted in Blender for sole mold release verification, and scaled with ShoeMaster for precision upper yield.
+            Precision geometric upper pattern layout developed by hand, establishing exact component nesting, fold allowances, and structural tension points.
           </p>
           <p data-lang-block="es">
-            Diseñado para amortiguación mecánica, transpirabilidad liviana y tracción técnica en suela. Desarrollado mediante ideación rápida con Vizcom, modelado en Blender para verificar salida de matriz de suela y escalado con ShoeMaster para óptimo rendimiento de corte.
+            Diseño geométrico de precisión para patrones de capellada desarrollado a mano, estableciendo encaje exacto de componentes, márgenes de doblez y puntos de tensión estructural.
           </p>
         </article>
 
-        <!-- Project 3: Lifestyle & Heritage Footwear -->
+        <!-- Project 3: Technical Sketch Analytics (Sketch1) -->
         <article class="project-card">
-          <div class="media-slot">
-            <div class="slot-label">
-              <span>Vulcanized &amp; Cupsole</span>
-              <span class="mono">Costing Optimization</span>
-            </div>
+          <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/img/Sketch1.png" alt="Sketch analysis" style="max-height:100%; max-width:100%; object-fit:contain;" />
           </div>
           <div class="pc-meta">
-            <span>Lifestyle Collection</span>
-            <span>Factory Scale</span>
+            <span>Tech Sketch / Material Analytics</span>
+            <span>Production Ready</span>
           </div>
           <h3>
-            <span data-lang-block="en">Urban Sneaker Collection — Scaled Manufacturing</span>
-            <span data-lang-block="es">Colección Sneaker Urbana — Manufactura a Escala</span>
+            <span data-lang-block="en">Technical Sketch Breakdown &amp; Analytics</span>
+            <span data-lang-block="es">Desglose de Boceto Técnico y Analítica</span>
           </h3>
           <p data-lang-block="en">
-            Contemporary vulcanized and cupsole concepts engineered under strict costing benchmarks. High material yield nesting, clean assembly lines, and factory-ready spec sheets delivered directly to shop-floor technicians.
+            Detailed material callouts, textile embossing instructions, TPU component placement, and colorway mapping annotations prepared for shop-floor execution.
           </p>
           <p data-lang-block="es">
-            Conceptos contemporáneos vulcanizados y de suela preformada diseñados bajo estrictos parámetros de costo. Patrones de alto aprovechamiento, líneas limpias de aparado y fichas técnicas completas para piso de producción.
+            Anotaciones detalladas de materiales, instrucciones de gofrado textil, ubicación de componentes en TPU y mapeo de color preparadas para ejecución en piso de planta.
           </p>
         </article>
 
@@ -752,7 +629,7 @@
     </section>
 
     <!-- 05 CAPABILITIES -->
-    <section id="skills" class="wrap">
+    <section id="skills" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
           <div class="eyebrow">
@@ -809,7 +686,7 @@
     </section>
 
     <!-- 06 CONTACT -->
-    <section id="contact" class="wrap">
+    <section id="contact" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
           <div class="eyebrow">
@@ -913,11 +790,11 @@
         showSlide(currentSlide);
       });
 
-      // Auto play carousel cada 6 segundos
+      // Auto play carousel cada 5 segundos
       setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
-      }, 6000);
+      }, 5000);
     }
 
     // Header scroll background toggle
