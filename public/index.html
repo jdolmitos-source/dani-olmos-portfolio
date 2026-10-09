@@ -13,11 +13,11 @@
   <!-- Native Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* Estilos adicionales para el carrusel y la cuadrícula de 6 boxes */
+    /* Estilos para el carrusel ampliado y la galería completa de 20 elementos */
     .carousel-container {
       position: relative;
       width: 100%;
-      height: 420px;
+      height: 440px;
       overflow: hidden;
       background: var(--ink-faint, #111);
       border-radius: 4px;
@@ -43,7 +43,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: #0d0d0d;
+      background: #0b0b0b;
     }
     .carousel-caption {
       position: absolute;
@@ -75,36 +75,51 @@
     .carousel-prev { left: 1rem; }
     .carousel-next { right: 1rem; }
 
-    .six-box-grid {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
     }
-    .sample-box {
+    .gallery-card {
       background: var(--card-bg, #161616);
       border: 1px solid var(--border-color, #2a2a2a);
-      padding: 1.25rem;
+      padding: 1rem;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.6rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .sample-box-img {
+    .gallery-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent, #666);
+    }
+    .gallery-img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       background: #111;
       object-fit: contain;
       border-radius: 2px;
     }
-    .sample-box h4 {
+    .gallery-card .badge {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--accent, #aaa);
+      background: rgba(255,255,255,0.05);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      align-self: flex-start;
+    }
+    .gallery-card h4 {
       margin: 0;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-family: var(--font-heading, sans-serif);
     }
-    .sample-box p {
+    .gallery-card p {
       margin: 0;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted, #aaa);
     }
   </style>
@@ -398,112 +413,215 @@
             <span data-lang-block="es">03 IA y Sistemas Digitales</span>
           </div>
           <h2 class="h2">
-            <span data-lang-block="en">Design showcase across categories &amp; technical execution.</span>
-            <span data-lang-block="es">Exhibición de diseño por categorías y ejecución técnica.</span>
+            <span data-lang-block="en">Complete Design Portfolio &amp; Technical Archive.</span>
+            <span data-lang-block="es">Portafolio Completo de Diseño y Archivo Técnico.</span>
           </h2>
         </div>
       </div>
 
       <div class="ai-banner tick-frame" style="margin-bottom: 2rem;">
         <p data-lang-block="en">
-          Explore below an interactive presentation showcase of industrial silhouettes, followed by categorized design examples spanning Sport, Dama, Niño/a, Hombre, Lines &amp; Color, and Blender 3D modeling.
+          Explore below the complete collection of 20+ industrial silhouettes, digital 3D models, technical lines, and categorized footwear lines spanning Sport, Dama, Niño/a, Hombre, and Blender sculpting.
         </p>
         <p data-lang-block="es">
-          Explora a continuación una presentación interactiva de siluetas industriales, seguida de ejemplos de diseño categorizados que abarcan Sport, Dama, Niño/a, Hombre, Líneas y Color, y modelado 3D en Blender.
+          Explora a continuación la colección completa de más de 20 siluetas industriales, modelos 3D digitales, líneas técnicas y colecciones categorizadas que abarcan Sport, Dama, Niño/a, Hombre y esculpido en Blender.
         </p>
       </div>
 
-      <!-- CARRUSEL DE PRESENTACIÓN DE TRABAJOS -->
+      <!-- CARRUSEL AMPLIADO -->
       <div style="margin-bottom:0.5rem;" class="eyebrow">
-        <span data-lang-block="en">Interactive Presentation Showcase</span>
-        <span data-lang-block="es">Presentación Interactiva de Trabajos</span>
+        <span data-lang-block="en">Featured Highlights Showcase</span>
+        <span data-lang-block="es">Destacados de la Presentación</span>
       </div>
       <div class="carousel-container tick-frame" id="work-carousel">
         <div class="carousel-slide active">
-          <img src="assets/img/Blender.PNG" alt="Blender 3D Presentation" />
-          <div class="carousel-caption">
-            <span data-lang-block="en">01 / Blender 3D Sole &amp; Prototype Sculpting</span>
-            <span data-lang-block="es">01 / Esculpido 3D de Suela y Prototipo en Blender</span>
-          </div>
+          <img src="assets/img/Blender.PNG" alt="Blender 3D" />
+          <div class="carousel-caption"><span>01 / Blender 3D Sole &amp; Prototype Sculpting</span></div>
         </div>
         <div class="carousel-slide">
-          <img src="assets/img/Ilustrador 1.jpg" alt="Sport Silhouette" />
-          <div class="carousel-caption">
-            <span data-lang-block="en">02 / Sport Footwear Development</span>
-            <span data-lang-block="es">02 / Desarrollo de Calzado Deportivo</span>
-          </div>
+          <img src="assets/img/Ilustrador 1.jpg" alt="Sport" />
+          <div class="carousel-caption"><span>02 / Sport Performance Silhouette</span></div>
         </div>
         <div class="carousel-slide">
-          <img src="assets/img/Ilustrador Lines.PNG" alt="Lines and Color" />
-          <div class="carousel-caption">
-            <span data-lang-block="en">03 / Technical Lines &amp; Color Grading</span>
-            <span data-lang-block="es">03 / Líneas Técnicas y Graduación de Color</span>
-          </div>
+          <img src="assets/img/Ilustrador Lines.PNG" alt="Lines" />
+          <div class="carousel-caption"><span>03 / Technical Line Patterns</span></div>
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/Ilustrador color.PNG" alt="Color" />
+          <div class="carousel-caption"><span>04 / Colorway &amp; Material Mapping</span></div>
         </div>
         <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous slide">&#10094;</button>
         <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next slide">&#10095;</button>
       </div>
 
-      <!-- 6 BOXES CON EJEMPLOS CATEGORIZADOS -->
+      <!-- GALERÍA COMPLETA DE LOS 20 ARCHIVOS -->
       <div style="margin-top: 3rem; margin-bottom: 1.2rem;" class="eyebrow">
-        <span data-lang-block="en">Categorized Design Portfolio</span>
-        <span data-lang-block="es">Portafolio de Diseño Categorizado</span>
+        <span data-lang-block="en">Complete Archive Gallery (20 Items)</span>
+        <span data-lang-block="es">Galería de Archivo Completa (20 Elementos)</span>
       </div>
 
-      <div class="six-box-grid">
-        <!-- Box 1: Sport -->
-        <div class="sample-box tick-frame">
-          <img src="assets/img/Ilustrador 1.jpg" alt="Sport" class="sample-box-img" />
-          <h4 data-lang-block="en">Sport Footwear</h4>
-          <h4 data-lang-block="es">Línea Sport</h4>
-          <p data-lang-block="en">High-performance running and casual athletic sneakers engineered for comfort and durability.</p>
-          <p data-lang-block="es">Zapatillas deportivas de alto rendimiento y running casual diseñadas para confort y durabilidad.</p>
+      <div class="gallery-grid">
+
+        <!-- 1. Blender -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Blender.PNG" alt="Blender 3D" class="gallery-img" />
+          <span class="badge">Blender 3D</span>
+          <h4>3D Sole &amp; Prototype</h4>
+          <p>Digital sole modeling and volumetric sculpture.</p>
         </div>
 
-        <!-- Box 2: Dama -->
-        <div class="sample-box tick-frame">
-          <img src="assets/img/Ilustrador 14.jpg" alt="Dama" class="sample-box-img" />
-          <h4 data-lang-block="en">Dama Collection</h4>
-          <h4 data-lang-block="es">Colección Dama</h4>
-          <p data-lang-block="en">Urban casuals and comfortable footwear crafted for women's lifestyle collections.</p>
-          <p data-lang-block="es">Calzado casual urbano y confortable creado para colecciones de estilo de vida femenino.</p>
+        <!-- 2. Lines -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador Lines.PNG" alt="Lines" class="gallery-img" />
+          <span class="badge">Lines &amp; Color</span>
+          <h4>Technical Pattern Lines</h4>
+          <p>Vector geometry and precision technical linework.</p>
         </div>
 
-        <!-- Box 3: Niño/a -->
-        <div class="sample-box tick-frame">
-          <img src="assets/img/Ilustrador 3.jpg" alt="Niño/a" class="sample-box-img" />
-          <h4 data-lang-block="en">Children's Footwear (Niño/a)</h4>
-          <h4 data-lang-block="es">Calzado Infantil (Niño/a)</h4>
-          <p data-lang-block="en">School shoes and playful footwear collections featuring ergonomic adjustments and secure closures.</p>
-          <p data-lang-block="es">Zapatos escolares y colecciones infantiles con ajustes ergonómicos y cierres seguros.</p>
+        <!-- 3. Color -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador color.PNG" alt="Color" class="gallery-img" />
+          <span class="badge">Lines &amp; Color</span>
+          <h4>Colorway Mapping</h4>
+          <p>Color distribution and aesthetic material study.</p>
         </div>
 
-        <!-- Box 4: Hombre -->
-        <div class="sample-box tick-frame">
-          <img src="assets/img/Ilustrador 7.jpg" alt="Hombre" class="sample-box-img" />
-          <h4 data-lang-block="en">Hombre Collection</h4>
-          <h4 data-lang-block="es">Colección Hombre</h4>
-          <p data-lang-block="en">Rugged boots, casual sneakers, and everyday men's footwear built for scale production.</p>
-          <p data-lang-block="es">Botines robustos, zapatillas casuales y calzado masculino de uso diario listos para producción en serie.</p>
+        <!-- 4. Sport 1 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 1.jpg" alt="Sport 1" class="gallery-img" />
+          <span class="badge">Sport</span>
+          <h4>Sport Silhouette I</h4>
+          <p>High-performance urban athletic sneaker.</p>
         </div>
 
-        <!-- Box 5: Lines and Color -->
-        <div class="sample-box tick-frame">
-          <img src="assets/img/Ilustrador Lines.PNG" alt="Lines and Color" class="sample-box-img" />
-          <h4 data-lang-block="en">Lines &amp; Color</h4>
-          <h4 data-lang-block="es">Líneas y Color</h4>
-          <p data-lang-block="en">Detailed technical pattern geometries, vector linework, and colorway mapping studies.</p>
-          <p data-lang-block="es">Geometrías detalladas de patronaje técnico, trazos vectoriales y estudios de mapeo de color.</p>
+        <!-- 5. Sport 2 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 2.jpg" alt="Sport 2" class="gallery-img" />
+          <span class="badge">Sport</span>
+          <h4>Sport Silhouette II</h4>
+          <p>Running and multi-surface traction model.</p>
         </div>
 
-        <!-- Box 6: Blender -->
-        <div class="sample-box tick-frame">
-          <img src="assets/img/Blender.PNG" alt="Blender" class="sample-box-img" />
-          <h4 data-lang-block="en">Blender 3D Modeling</h4>
-          <h4 data-lang-block="es">Modelado 3D en Blender</h4>
-          <p data-lang-block="en">Digital 3D footwear sculptures, sole mold simulations, and realistic material rendering workflows.</p>
-          <p data-lang-block="es">Esculturas digitales 3D de calzado, simulaciones de matriz de suela y flujos de renderizado realista.</p>
+        <!-- 6. Niño 3 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 3.jpg" alt="Niño/a" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Children's Line I</h4>
+          <p>Ergonomic school shoe with secure velcro strap.</p>
         </div>
+
+        <!-- 7. Niño 4 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 4.jpg" alt="Niño 4" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Children's Line II</h4>
+          <p>Licensed character slip-on casual style.</p>
+        </div>
+
+        <!-- 8. Niño 5 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 5.jpg" alt="Niño 5" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Children's Line III</h4>
+          <p>Comfortable low-top toddler sneaker.</p>
+        </div>
+
+        <!-- 9. Hombre 6 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 6.jpg" alt="Hombre 6" class="gallery-img" />
+          <span class="badge">Hombre</span>
+          <h4>Men's Casual I</h4>
+          <p>Urban low-profile everyday sneaker.</p>
+        </div>
+
+        <!-- 10. Hombre 7 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 7.jpg" alt="Hombre 7" class="gallery-img" />
+          <span class="badge">Hombre</span>
+          <h4>Men's Boot Silhouette</h4>
+          <p>Rugged outdoor ankle boot architecture.</p>
+        </div>
+
+        <!-- 11. Hombre 8 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 8.jpg" alt="Hombre 8" class="gallery-img" />
+          <span class="badge">Hombre</span>
+          <h4>Men's Mid-Top Sneaker</h4>
+          <p>Structured athletic lifestyle high-top.</p>
+        </div>
+
+        <!-- 12. Sport 9 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 9.jpg" alt="Sport 9" class="gallery-img" />
+          <span class="badge">Sport</span>
+          <h4>Sport Slip-On</h4>
+          <p>Lightweight elastic training footwear.</p>
+        </div>
+
+        <!-- 13. Niño 10 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 10.jpg" alt="Niño 10" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Children's High-Top</h4>
+          <p>Ankle-support youth canvas style.</p>
+        </div>
+
+        <!-- 14. Niño 11 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 11.jpg" alt="Niño 11" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Youth Sport Trainer</h4>
+          <p>Active play lightweight sneaker.</p>
+        </div>
+
+        <!-- 15. Sport 12 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 12.jpg" alt="Sport 12" class="gallery-img" />
+          <span class="badge">Sport</span>
+          <h4>Sport Runner Classic</h4>
+          <p>Clean leather-finish athletic baseline.</p>
+        </div>
+
+        <!-- 16. Niño 13 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 13.jpg" alt="Niño 13" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Junior Heritage Sneaker</h4>
+          <p>Printed pattern casual junior shoe.</p>
+        </div>
+
+        <!-- 17. Dama 14 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 14.jpg" alt="Dama 14" class="gallery-img" />
+          <span class="badge">Dama</span>
+          <h4>Women's Casual Flat</h4>
+          <p>Comfortable everyday lifestyle flat.</p>
+        </div>
+
+        <!-- 18. Niño 15 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 15.jpg" alt="Niño 15" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>Infant Double-Strap</h4>
+          <p>Secure double velcro baby shoe.</p>
+        </div>
+
+        <!-- 19. Niño 16 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 16.jpg" alt="Niño 16" class="gallery-img" />
+          <span class="badge">Niño / Niña</span>
+          <h4>School White Sneaker</h4>
+          <p>Classic clean institutional school shoe.</p>
+        </div>
+
+        <!-- 20. Dama 17 -->
+        <div class="gallery-card tick-frame">
+          <img src="assets/img/Ilustrador 17.png" alt="Dama 17" class="gallery-img" />
+          <span class="badge">Dama</span>
+          <h4>Women's Loafer &amp; Sole</h4>
+          <p>Elegant professional moccasin with outsole view.</p>
+        </div>
+
       </div>
 
     </section>
@@ -717,7 +835,7 @@
 
   <!-- Script for Language Switcher & Carousel -->
   <script>
-    // Language Switcher Logic
+    // Language Switcher Language Switcher Logic
     const btnEn = document.getElementById('btn-lang-en');
     const btnEs = document.getElementById('btn-lang-es');
     const htmlEl = document.documentElement;
