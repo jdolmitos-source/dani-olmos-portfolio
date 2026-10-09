@@ -12,6 +12,101 @@
 
   <!-- Native Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Estilos adicionales para el carrusel y la cuadrícula de 6 boxes */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      background: var(--ink-faint, #111);
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: #fff;
+      padding: 1.5rem 1rem 1rem;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.85rem;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+      font-family: var(--font-mono, monospace);
+      transition: background 0.2s;
+    }
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.9);
+    }
+    .carousel-prev { left: 1rem; }
+    .carousel-next { right: 1rem; }
+
+    .six-box-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .sample-box {
+      background: var(--card-bg, #161616);
+      border: 1px solid var(--border-color, #2a2a2a);
+      padding: 1.25rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .sample-box-img {
+      width: 100%;
+      height: 200px;
+      background: #222;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .sample-box h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-family: var(--font-heading, sans-serif);
+    }
+    .sample-box p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted, #aaa);
+    }
+  </style>
 </head>
 <body id="top">
 
@@ -302,74 +397,114 @@
             <span data-lang-block="es">03 IA y Sistemas Digitales</span>
           </div>
           <h2 class="h2">
-            <span data-lang-block="en">AI as an accelerator, not a replacement.</span>
-            <span data-lang-block="es">La IA como acelerador, no como reemplazo.</span>
+            <span data-lang-block="en">AI as an accelerator, presentation &amp; technical execution.</span>
+            <span data-lang-block="es">IA como acelerador, presentación y ejecución técnica.</span>
           </h2>
         </div>
       </div>
 
-      <div class="ai-banner tick-frame">
+      <div class="ai-banner tick-frame" style="margin-bottom: 2rem;">
         <p data-lang-block="en">
-          AI does not replace <em>18 years of production judgment</em> — it amplifies it. I leverage AI across two fronts: rapidly iterating industrial footwear silhouettes, and engineering custom web applications, Firebase databases, and automations that optimize factory operations.
+          AI does not replace <em>18 years of production judgment</em> — it amplifies it. Explore below an interactive showcase of my work presentation, followed by manual designs, sketches, modeling blueprints, and finished prototypes.
         </p>
         <p data-lang-block="es">
-          La IA no reemplaza <em>18 años de criterio en manufactura</em>: los potencia. Aplico la IA en dos frentes: iteración veloz de conceptos de calzado, y desarrollo ágil de plataformas web, bases de datos Firebase y automatizaciones para sincronizar planta y operaciones.
+          La IA no reemplaza <em>18 años de criterio en manufactura</em>: los potencia. Explora a continuación una presentación interactiva de trabajos, seguida de ejemplos de diseños manuales, bocetos, planos de modelaje y prototipos terminados.
         </p>
       </div>
 
-      <div style="margin-bottom:1.2rem;" class="eyebrow">
-        <span data-lang-block="en">Footwear Exploration Pipeline</span>
-        <span data-lang-block="es">Flujo de Exploración de Calzado</span>
+      <!-- CARRUSEL DE PRESENTACIÓN DE TRABAJOS -->
+      <div style="margin-bottom:0.5rem;" class="eyebrow">
+        <span data-lang-block="en">Interactive Presentation Showcase</span>
+        <span data-lang-block="es">Presentación Interactiva de Trabajos</span>
       </div>
-      <div class="ai-pipeline">
-        <div class="node">Sketch</div>
-        <div class="arrow">→</div>
-        <div class="node accent">Vizcom AI</div>
-        <div class="arrow">→</div>
-        <div class="node">Blender 3D</div>
-        <div class="arrow">→</div>
-        <div class="node accent">ShoeMaster</div>
-        <div class="arrow">→</div>
-        <div class="node">Production Ready</div>
-      </div>
-
-      <div style="margin-bottom:1.2rem;" class="eyebrow">
-        <span data-lang-block="en">Web &amp; Production Ops Pipeline</span>
-        <span data-lang-block="es">Flujo Web y Operaciones Técnicas</span>
-      </div>
-      <div class="ai-pipeline">
-        <div class="node">Architecture</div>
-        <div class="arrow">→</div>
-        <div class="node accent">AI Code Dev</div>
-        <div class="arrow">→</div>
-        <div class="node">Firebase DB/Auth</div>
-        <div class="arrow">→</div>
-        <div class="node accent">GitHub CI/CD</div>
-        <div class="arrow">→</div>
-        <div class="node">Automations</div>
-      </div>
-
-      <!-- Compare Widget -->
-      <div class="compare-widget tick-frame">
-        <div class="layer before">
-          <img src="assets/img/sketch-compare.jpg" alt="Technical sketch" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div class="layer after" id="compare-after">
-          <img src="assets/img/vizcom-compare.jpg" alt="Vizcom exploration" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div class="compare-handle" id="compare-handle">
-          <div class="grip">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+      <div class="carousel-container tick-frame" id="work-carousel">
+        <div class="carousel-slide active">
+          <img src="assets/img/vizcom-compare.jpg" alt="Presentation 1" />
+          <div class="carousel-caption">
+            <span data-lang-block="en">01 / AI Render Concept Exploration</span>
+            <span data-lang-block="es">01 / Exploración de Concepto con Render IA</span>
           </div>
         </div>
-        <input type="range" id="compare-range" min="0" max="100" value="50" aria-label="Compare slider" />
+        <div class="carousel-slide">
+          <img src="assets/img/sketch-compare.jpg" alt="Presentation 2" />
+          <div class="carousel-caption">
+            <span data-lang-block="en">02 / Technical Footwear Silhouette</span>
+            <span data-lang-block="es">02 / Silueta de Calzado Técnico</span>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/vizcom-compare.jpg" alt="Presentation 3" />
+          <div class="carousel-caption">
+            <span data-lang-block="en">03 / Advanced 3D Sole Modeling</span>
+            <span data-lang-block="es">03 / Modelado 3D de Suela Avanzado</span>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next slide">&#10095;</button>
       </div>
-      <div class="compare-labels">
-        <span data-lang-block="en">Initial Technical Sketch</span>
-        <span data-lang-block="es">Boceto Técnico Inicial</span>
-        <span data-lang-block="en">AI Render Exploration</span>
-        <span data-lang-block="es">Exploración Render IA</span>
+
+      <!-- 6 BOXES CON EJEMPLOS -->
+      <div style="margin-top: 3rem; margin-bottom: 1.2rem;" class="eyebrow">
+        <span data-lang-block="en">Design Breakdown &amp; Technical Samples</span>
+        <span data-lang-block="es">Desglose de Diseño y Muestras Técnicas</span>
       </div>
+
+      <div class="six-box-grid">
+        <!-- Box 1: Diseños manuales -->
+        <div class="sample-box tick-frame">
+          <img src="assets/img/sketch-compare.jpg" alt="Diseños manuales" class="sample-box-img" />
+          <h4 data-lang-block="en">Manual Designs</h4>
+          <h4 data-lang-block="es">Diseños Manuales</h4>
+          <p data-lang-block="en">Traditional freehand rendering and hand-rendered proportions on paper and digital tablets.</p>
+          <p data-lang-block="es">Trazos a mano alzada tradicionales y estudio de proporciones sobre papel y tabletas digitales.</p>
+        </div>
+
+        <!-- Box 2: Bocetos -->
+        <div class="sample-box tick-frame">
+          <img src="assets/img/sketch-compare.jpg" alt="Bocetos" class="sample-box-img" />
+          <h4 data-lang-block="en">Initial Sketches</h4>
+          <h4 data-lang-block="es">Bocetos</h4>
+          <p data-lang-block="en">Early ideation lines establishing volumes, stitching details, and functional ergonomics.</p>
+          <p data-lang-block="es">Líneas de ideación temprana estableciendo volúmenes, detalles de costura y ergonomía funcional.</p>
+        </div>
+
+        <!-- Box 3: Planos 1 de modelaje -->
+        <div class="sample-box tick-frame">
+          <img src="assets/img/vizcom-compare.jpg" alt="Planos 1 de modelaje" class="sample-box-img" />
+          <h4 data-lang-block="en">Modeling Blueprints I</h4>
+          <h4 data-lang-block="es">Planos 1 de Modelaje</h4>
+          <p data-lang-block="en">ShoeMaster shell development, flattening geometry, and component technical breakdown.</p>
+          <p data-lang-block="es">Desarrollo de capellada en ShoeMaster, geometría de aplanado y desglose técnico de componentes.</p>
+        </div>
+
+        <!-- Box 4: Planos 2 de modelaje -->
+        <div class="sample-box tick-frame">
+          <img src="assets/img/vizcom-compare.jpg" alt="Planos 2 de modelaje" class="sample-box-img" />
+          <h4 data-lang-block="en">Modeling Blueprints II</h4>
+          <h4 data-lang-block="es">Planos 2 de Modelaje</h4>
+          <p data-lang-block="en">Grading setups, nesting arrangements, and material yield calculations for cutting floors.</p>
+          <p data-lang-block="es">Configuración de escalados, esquemas de encaje y cálculo de rendimiento de material para corte.</p>
+        </div>
+
+        <!-- Box 5: Prototipos terminados 1 -->
+        <div class="sample-box tick-frame">
+          <img src="assets/img/hero.mp4" alt="Prototipos terminados 1" class="sample-box-img" style="background: #111;" />
+          <h4 data-lang-block="en">Finished Prototypes I</h4>
+          <h4 data-lang-block="es">Prototipos Terminados I</h4>
+          <p data-lang-block="en">First physical sample validation, assembly testing, and structural fit adjustments.</p>
+          <p data-lang-block="es">Validación de primera muestra física, pruebas de armado y ajustes de calce estructural.</p>
+        </div>
+
+        <!-- Box 6: Prototipos terminados 2 -->
+        <div class="sample-box tick-frame">
+          <img src="assets/img/hero.mp4" alt="Prototipos terminados 2" class="sample-box-img" style="background: #111;" />
+          <h4 data-lang-block="en">Finished Prototypes II</h4>
+          <h4 data-lang-block="es">Prototipos Terminados II</h4>
+          <p data-lang-block="en">Scale production release, final colorway samples, and factory floor mass-production units.</p>
+          <p data-lang-block="es">Liberación a producción en serie, muestras finales de color y unidades de piso de fábrica.</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- 04 PROJECTS -->
@@ -579,7 +714,7 @@
     </div>
   </footer>
 
-  <!-- Script for Language Switcher & Comparison Slider -->
+  <!-- Script for Language Switcher & Comparison Slider & Carousel -->
   <script>
     // Language Switcher Logic
     const btnEn = document.getElementById('btn-lang-en');
@@ -604,17 +739,33 @@
     const savedLang = localStorage.getItem('preferred-lang') || 'en';
     setLanguage(savedLang);
 
-    // Image Comparison Slider Logic
-    const range = document.getElementById('compare-range');
-    const afterLayer = document.getElementById('compare-after');
-    const handle = document.getElementById('compare-handle');
+    // Carousel Logic
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    let currentSlide = 0;
 
-    if (range && afterLayer && handle) {
-      range.addEventListener('input', (e) => {
-        const val = e.target.value;
-        afterLayer.style.clipPath = `inset(0 0 0 ${val}%)`;
-        handle.style.left = `${val}%`;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
       });
+    }
+
+    if (prevBtn && nextBtn && slides.length > 0) {
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      });
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      });
+
+      // Auto play carousel cada 5 segundos
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
     }
 
     // Header scroll background toggle
