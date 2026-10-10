@@ -13,7 +13,7 @@
   <!-- Native Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* Estilos mejorados para carrusel, galería y videos */
+    /* Estilos para carrusel, galería, videos y visor en grande (Lightbox) */
     .carousel-container {
       position: relative;
       width: 100%;
@@ -44,6 +44,7 @@
       height: 100%;
       object-fit: contain;
       background: transparent;
+      cursor: pointer;
     }
     .carousel-caption {
       position: absolute;
@@ -101,6 +102,7 @@
       background: transparent;
       object-fit: contain;
       border-radius: 2px;
+      cursor: pointer;
     }
     .gallery-card .badge {
       font-family: var(--font-mono, monospace);
@@ -144,6 +146,44 @@
       background: #000;
       object-fit: contain;
       border-radius: 2px;
+    }
+
+    /* Estilos para el Lightbox (imagen en grande al hacer clic) */
+    #image-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #image-lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #image-lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    #image-lightbox .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2.5rem;
+      font-family: monospace;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
   </style>
 </head>
@@ -444,10 +484,10 @@
 
       <div class="ai-banner tick-frame" style="margin-bottom: 2rem;">
         <p data-lang-block="en">
-          Interactive slideshow featuring all design iterations across Sport, Dama, Niño/a, Hombre, Lines &amp; Color, and Blender 3D modeling, followed by the complete categorized gallery.
+          Interactive slideshow featuring all design iterations across Sport, Dama, Niño/a, Hombre, Lines &amp; Color, and Blender 3D modeling. Click any image to view it in full screen.
         </p>
         <p data-lang-block="es">
-          Presentación interactiva que incluye todas las iteraciones de diseño en Sport, Dama, Niño/a, Hombre, Líneas y Color, y modelado 3D en Blender, seguida de la galería completa categorizada.
+          Presentación interactiva que incluye todas las iteraciones de diseño en Sport, Dama, Niño/a, Hombre, Líneas y Color, y modelado 3D en Blender. Haz clic en cualquier imagen para verla en pantalla completa.
         </p>
       </div>
 
@@ -512,7 +552,7 @@
 
     </section>
 
-    <!-- SECCIÓN NUEVA DEDICADA A VIDEOS CON CONTROLES COMPLETOS -->
+    <!-- SECCIÓN DE VIDEOS CON CONTROLES COMPLETOS -->
     <section id="videos" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
@@ -545,7 +585,7 @@
       </div>
     </section>
 
-    <!-- 04 PROJECTS (CON TUS 3 ÚLTIMAS IMÁGENES TÉCNICAS Y DE PATRONAJE) -->
+    <!-- 04 PROJECTS (CON ARTBOARD-1.JPG ACTUALIZADO) -->
     <section id="projects" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
@@ -565,7 +605,7 @@
         <!-- Project 1: Skiving & Assembly Guide -->
         <article class="project-card">
           <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/img/ensambling guide.JPG" alt="Ensambling guide" style="max-height:100%; max-width:100%; object-fit:contain;" />
+            <img src="assets/img/ensambling guide.JPG" alt="Ensambling guide" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain;" />
           </div>
           <div class="pc-meta">
             <span>Tech Guide / Skiving Specs</span>
@@ -583,10 +623,10 @@
           </p>
         </article>
 
-        <!-- Project 2: Manual Pattern Engineering (Artboard-1) -->
+        <!-- Project 2: Manual Pattern Engineering (Artboard-1.jpg actualizado) -->
         <article class="project-card">
           <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/img/Artboard-1.png" alt="Manual pattern draft" style="max-height:100%; max-width:100%; object-fit:contain;" />
+            <img src="assets/img/Artboard-1.jpg" alt="Manual pattern draft" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain;" />
           </div>
           <div class="pc-meta">
             <span>Manual Draft / Pattern Layout</span>
@@ -607,7 +647,7 @@
         <!-- Project 3: Technical Sketch Analytics (Sketch1) -->
         <article class="project-card">
           <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/img/Sketch1.png" alt="Sketch analysis" style="max-height:100%; max-width:100%; object-fit:contain;" />
+            <img src="assets/img/Sketch1.png" alt="Sketch analysis" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain;" />
           </div>
           <div class="pc-meta">
             <span>Tech Sketch / Material Analytics</span>
@@ -730,6 +770,12 @@
 
   </main>
 
+  <!-- Lightbox Modal para ver imágenes en grande -->
+  <div id="image-lightbox">
+    <button class="close-lightbox" id="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Expanded view" />
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer wrap">
     <div>
@@ -742,70 +788,3 @@
       <span data-lang-block="es">HTML/CSS/JS Puro — CI/CD con GitHub Actions — Firebase Hosting</span>
     </div>
   </footer>
-
-  <!-- Script for Language Switcher & Carousel -->
-  <script>
-    // Language Switcher Logic
-    const btnEn = document.getElementById('btn-lang-en');
-    const btnEs = document.getElementById('btn-lang-es');
-    const htmlEl = document.documentElement;
-
-    function setLanguage(lang) {
-      htmlEl.setAttribute('data-lang', lang);
-      if (lang === 'en') {
-        btnEn.setAttribute('aria-pressed', 'true');
-        btnEs.setAttribute('aria-pressed', 'false');
-      } else {
-        btnEn.setAttribute('aria-pressed', 'false');
-        btnEs.setAttribute('aria-pressed', 'true');
-      }
-      localStorage.setItem('preferred-lang', lang);
-    }
-
-    btnEn.addEventListener('click', () => setLanguage('en'));
-    btnEs.addEventListener('click', () => setLanguage('es'));
-
-    const savedLang = localStorage.getItem('preferred-lang') || 'en';
-    setLanguage(savedLang);
-
-    // Carousel Logic
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    if (prevBtn && nextBtn && slides.length > 0) {
-      prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-      });
-      nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      });
-
-      // Auto play carousel cada 5 segundos
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }, 5000);
-    }
-
-    // Header scroll background toggle
-    const siteHeader = document.querySelector('header.site-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        siteHeader.classList.add('scrolled');
-      } else {
-        siteHeader.classList.remove('scrolled');
-      }
-    });
-  </script>
-</body>
-</html>
