@@ -118,6 +118,7 @@
       margin: 0;
       font-size: 0.95rem;
       font-family: var(--font-heading, sans-serif);
+      color: #fff;
     }
     .gallery-card p {
       margin: 0;
@@ -146,6 +147,16 @@
       background: #000;
       object-fit: contain;
       border-radius: 2px;
+    }
+    .video-card h4 {
+      color: #fff;
+      font-family: var(--font-heading, sans-serif);
+      margin: 0;
+    }
+    .video-card p {
+      color: var(--text-muted, #ccc);
+      font-size: 0.85rem;
+      margin: 0;
     }
 
     /* Estilos para el Lightbox (imagen en grande al hacer clic) */
@@ -552,7 +563,7 @@
 
     </section>
 
-    <!-- SECCIÓN DE VIDEOS CON CONTROLES COMPLETOS -->
+    <!-- SECCIÓN DE VIDEOS CON TEXTO CORREGIDO Y CLARO -->
     <section id="videos" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
@@ -585,7 +596,7 @@
       </div>
     </section>
 
-    <!-- 04 PROJECTS (CON FICHAS TÉCNICAS CLICKEABLES) -->
+    <!-- 04 PROJECTS (CON FICHAS TÉCNICAS Y SUELA GLADIADOR) -->
     <section id="projects" class="wrap" style="margin-top: 4rem;">
       <div class="section-head">
         <div>
@@ -594,15 +605,38 @@
             <span data-lang-block="es">04 Proyectos Seleccionados e Ingeniería Técnica</span>
           </div>
           <h2 class="h2">
-            <span data-lang-block="en">From manual drafting to factory production.</span>
-            <span data-lang-block="es">Del patronaje manual a la producción en fábrica.</span>
+            <span data-lang-block="en">From tooling engineering to factory production.</span>
+            <span data-lang-block="es">De la ingeniería de matricería a la producción en fábrica.</span>
           </h2>
         </div>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Project 1: Skiving & Assembly Guide -->
+        <!-- Project 1: Suela Gladiador (Nueva tarjeta basada en el PDF de ingeniería de suelas) -->
+        <article class="project-card">
+          <div class="media-slot" style="background:#0b0b0b; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:180px;">
+            <div style="font-family:var(--font-mono); color:var(--accent); font-size:0.8rem; margin-bottom:0.5px;">TALLA 40 / TUNNEL SYSTEM</div>
+            <h3 style="color:#fff; font-size:1.2rem; margin:0;">SUELA GLADIADOR</h3>
+            <p style="color:#aaa; font-size:0.8rem; margin-top:0.5rem;">Vista Inferior &bull; Ingeniería de Matricería</p>
+          </div>
+          <div class="pc-meta">
+            <span>Outsole Tooling / Size 40</span>
+            <span>Tunnel System Tech</span>
+          </div>
+          <h3>
+            <span data-lang-block="en">Gladiator Outsole Engineering &amp; Tooling (Size 40)</span>
+            <span data-lang-block="es">Ingeniería de Suela Gladiador y Matricería (Talla 40)</span>
+          </h3>
+          <p data-lang-block="en">
+            Advanced outsole technical specification featuring the integrated Tunnel System architecture, bottom profile views, precise dimensional guidelines, and mold release parameters.
+          </p>
+          <p data-lang-block="es">
+            Especificación técnica avanzada de suela integrando la arquitectura del sistema Tunnel System[cite: 11], vistas de perfil inferior, directrices dimensionales precisas y parámetros de desmoldeo.
+          </p>
+        </article>
+
+        <!-- Project 2: Skiving & Assembly Guide -->
         <article class="project-card">
           <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
             <img src="assets/img/ensambling guide.JPG" alt="Ensambling guide" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain; cursor:pointer;" />
@@ -623,7 +657,7 @@
           </p>
         </article>
 
-        <!-- Project 2: Manual Pattern Engineering (Artboard-1.jpg) -->
+        <!-- Project 3: Manual Pattern Engineering (Artboard-1.jpg) -->
         <article class="project-card">
           <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
             <img src="assets/img/Artboard-1.jpg" alt="Manual pattern draft" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain; cursor:pointer;" />
@@ -641,27 +675,6 @@
           </p>
           <p data-lang-block="es">
             Diseño geométrico de precisión para patrones de capellada desarrollado a mano, estableciendo encaje exacto de componentes, márgenes de doblez y puntos de tensión estructural.
-          </p>
-        </article>
-
-        <!-- Project 3: Technical Sketch Analytics (Sketch1) -->
-        <article class="project-card">
-          <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/img/Sketch1.png" alt="Sketch analysis" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain; cursor:pointer;" />
-          </div>
-          <div class="pc-meta">
-            <span>Tech Sketch / Material Analytics</span>
-            <span>Production Ready</span>
-          </div>
-          <h3>
-            <span data-lang-block="en">Technical Sketch Breakdown &amp; Analytics</span>
-            <span data-lang-block="es">Desglose de Boceto Técnico y Analítica</span>
-          </h3>
-          <p data-lang-block="en">
-            Detailed material callouts, textile embossing instructions, TPU component placement, and colorway mapping annotations prepared for shop-floor execution.
-          </p>
-          <p data-lang-block="es">
-            Anotaciones detalladas de materiales, instrucciones de gofrado textil, ubicación de componentes en TPU y mapeo de color preparadas para ejecución en piso de planta.
           </p>
         </article>
 
@@ -734,150 +747,3 @@
             <span data-lang-block="es">06 Contacto</span>
           </div>
           <h2 class="h2">
-            <span data-lang-block="en">Ready for international teams.</span>
-            <span data-lang-block="es">Listo para equipos internacionales.</span>
-          </h2>
-        </div>
-      </div>
-
-      <div class="contact-grid">
-        <div>
-          <p class="lede" data-lang-block="en">
-            Open to opportunities in footwear design, development, and technical operations across Europe, especially the Netherlands. Let's talk about how 18 years of production craftsmanship combined with modern AI workflows can fit your team.
-          </p>
-          <p class="lede" data-lang-block="es">
-            Abierto a oportunidades de diseño, desarrollo y operaciones técnicas en Europa, especialmente Países Bajos. Conversemos sobre cómo 18 años de experiencia en manufactura combinados con flujos ágiles de IA pueden sumar valor a tu equipo.
-          </p>
-        </div>
-
-        <div class="contact-links">
-          <a href="mailto:jd.olmitos@gmail.com">
-            <span>Email</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/dani-olmos/" target="_blank" rel="noopener">
-            <span>LinkedIn</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-          <a href="assets/cv.pdf" target="_blank" rel="noopener">
-            <span data-lang-block="en">Curriculum (PDF)</span>
-            <span data-lang-block="es">Currículum (PDF)</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Lightbox Modal para ver imágenes en grande -->
-  <div id="image-lightbox">
-    <button class="close-lightbox" id="lightbox-close">&times;</button>
-    <img id="lightbox-img" src="" alt="Expanded view" />
-  </div>
-
-  <!-- Footer -->
-  <footer class="site-footer wrap">
-    <div>
-      &copy; 2026 Dani Olmos. 
-      <span data-lang-block="en">All rights reserved.</span>
-      <span data-lang-block="es">Todos los derechos reservados.</span>
-    </div>
-    <div>
-      <span data-lang-block="en">Vanilla HTML/CSS/JS — GitHub Actions CI/CD — Firebase Hosting</span>
-      <span data-lang-block="es">HTML/CSS/JS Puro — CI/CD con GitHub Actions — Firebase Hosting</span>
-    </div>
-  </footer>
-
-  <!-- Script for Language Switcher, Carousel & Lightbox -->
-  <script>
-    // Language Switcher Logic
-    const btnEn = document.getElementById('btn-lang-en');
-    const btnEs = document.getElementById('btn-lang-es');
-    const htmlEl = document.documentElement;
-
-    function setLanguage(lang) {
-      htmlEl.setAttribute('data-lang', lang);
-      if (lang === 'en') {
-        btnEn.setAttribute('aria-pressed', 'true');
-        btnEs.setAttribute('aria-pressed', 'false');
-      } else {
-        btnEn.setAttribute('aria-pressed', 'false');
-        btnEs.setAttribute('aria-pressed', 'true');
-      }
-      localStorage.setItem('preferred-lang', lang);
-    }
-
-    btnEn.addEventListener('click', () => setLanguage('en'));
-    btnEs.addEventListener('click', () => setLanguage('es'));
-
-    const savedLang = localStorage.getItem('preferred-lang') || 'en';
-    setLanguage(savedLang);
-
-    // Carousel Logic
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    if (prevBtn && nextBtn && slides.length > 0) {
-      prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-      });
-      nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      });
-
-      // Auto play carousel cada 5 segundos
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }, 5000);
-    }
-
-    // Lightbox Logic (Ver cualquier imagen del sitio en grande)
-    const lightbox = document.getElementById('image-lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    document.querySelectorAll('img').forEach(img => {
-      // Excluir íconos o logos si es necesario, pero permitimos todas las de contenido
-      if (!img.closest('header') && !img.closest('footer')) {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', (e) => {
-          lightboxImg.src = e.target.src;
-          lightbox.classList.add('active');
-        });
-      }
-    });
-
-    lightboxClose.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-      }
-    });
-
-    // Header scroll background toggle
-    const siteHeader = document.querySelector('header.site-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        siteHeader.classList.add('scrolled');
-      } else {
-        siteHeader.classList.remove('scrolled');
-      }
-    });
-  </script>
-</body>
-</html>
