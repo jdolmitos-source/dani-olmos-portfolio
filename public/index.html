@@ -159,6 +159,24 @@
       margin: 0;
     }
 
+    /* Botón para ver planos en PDF */
+    .btn-pdf {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--accent, #e65c00);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.8rem;
+      text-decoration: none;
+      border-radius: 2px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .btn-pdf:hover {
+      background: #ff6600;
+    }
+
     /* Estilos para el Lightbox (imagen en grande al hacer clic) */
     #image-lightbox {
       position: fixed;
@@ -525,225 +543,4 @@
         <div class="carousel-slide"><img src="assets/img/Ilustrador 12.jpg" alt="Sport 12" /><div class="carousel-caption"><span>Sport Runner Classic</span></div></div>
         <div class="carousel-slide"><img src="assets/img/Ilustrador 13.jpg" alt="Niño 13" /><div class="carousel-caption"><span>Junior Heritage Sneaker</span></div></div>
         <div class="carousel-slide"><img src="assets/img/Ilustrador 14.jpg" alt="Dama 14" /><div class="carousel-caption"><span>Women's Casual Flat</span></div></div>
-        <div class="carousel-slide"><img src="assets/img/Ilustrador 15.jpg" alt="Niño 15" /><div class="carousel-caption"><span>Infant Double-Strap</span></div></div>
-        <div class="carousel-slide"><img src="assets/img/Ilustrador 16.jpg" alt="Niño 16" /><div class="carousel-caption"><span>School White Sneaker</span></div></div>
-        <div class="carousel-slide"><img src="assets/img/Ilustrador 17.png" alt="Dama 17" /><div class="carousel-caption"><span>Women's Loafer &amp; Sole</span></div></div>
-        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous slide">&#10094;</button>
-        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next slide">&#10095;</button>
-      </div>
-
-      <!-- GALERÍA COMPLETA DE LAS 20 IMÁGENES -->
-      <div style="margin-top: 3rem; margin-bottom: 1.2rem;" class="eyebrow">
-        <span data-lang-block="en">Complete Gallery Archive</span>
-        <span data-lang-block="es">Archivo de Galería Completa</span>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-card tick-frame"><img src="assets/img/Blender.PNG" alt="Blender" class="gallery-img" /><span class="badge">Blender 3D</span><h4>3D Sole &amp; Prototype</h4><p>Digital sole modeling.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador Lines.PNG" alt="Lines" class="gallery-img" /><span class="badge">Lines &amp; Color</span><h4>Technical Pattern Lines</h4><p>Vector geometry.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador color.PNG" alt="Color" class="gallery-img" /><span class="badge">Lines &amp; Color</span><h4>Colorway Mapping</h4><p>Material study.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 1.jpg" alt="Sport 1" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Silhouette I</h4><p>Athletic sneaker.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 2.jpg" alt="Sport 2" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Silhouette II</h4><p>Running model.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 3.jpg" alt="Niño 3" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's Line I</h4><p>Ergonomic school shoe.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 4.jpg" alt="Niño 4" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's Line II</h4><p>Slip-on casual style.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 5.jpg" alt="Niño 5" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's Line III</h4><p>Toddler sneaker.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 6.jpg" alt="Hombre 6" class="gallery-img" /><span class="badge">Hombre</span><h4>Men's Casual I</h4><p>Everyday sneaker.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 7.jpg" alt="Hombre 7" class="gallery-img" /><span class="badge">Hombre</span><h4>Men's Boot Silhouette</h4><p>Outdoor ankle boot.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 8.jpg" alt="Hombre 8" class="gallery-img" /><span class="badge">Hombre</span><h4>Men's Mid-Top Sneaker</h4><p>Lifestyle high-top.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 9.jpg" alt="Sport 9" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Slip-On</h4><p>Elastic training footwear.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 10.jpg" alt="Niño 10" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Children's High-Top</h4><p>Canvas style.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 11.jpg" alt="Niño 11" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Youth Sport Trainer</h4><p>Lightweight sneaker.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 12.jpg" alt="Sport 12" class="gallery-img" /><span class="badge">Sport</span><h4>Sport Runner Classic</h4><p>Leather-finish baseline.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 13.jpg" alt="Niño 13" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Junior Heritage Sneaker</h4><p>Printed pattern casual.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 14.jpg" alt="Dama 14" class="gallery-img" /><span class="badge">Dama</span><h4>Women's Casual Flat</h4><p>Everyday flat.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 15.jpg" alt="Niño 15" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>Infant Double-Strap</h4><p>Velcro baby shoe.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 16.jpg" alt="Niño 16" class="gallery-img" /><span class="badge">Niño / Niña</span><h4>School White Sneaker</h4><p>Clean institutional shoe.</p></div>
-        <div class="gallery-card tick-frame"><img src="assets/img/Ilustrador 17.png" alt="Dama 17" class="gallery-img" /><span class="badge">Dama</span><h4>Women's Loafer &amp; Sole</h4><p>Professional moccasin.</p></div>
-      </div>
-
-    </section>
-
-    <!-- SECCIÓN DE VIDEOS CON TEXTO CORREGIDO Y CLARO -->
-    <section id="videos" class="wrap" style="margin-top: 4rem;">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">
-            <span data-lang-block="en">AI Prototyping &amp; Motion Videos</span>
-            <span data-lang-block="es">Prototipado en Video e IA</span>
-          </div>
-          <h2 class="h2">
-            <span data-lang-block="en">Full Motion &amp; Workflow Showcase.</span>
-            <span data-lang-block="es">Demostración Completa en Movimiento y Flujo.</span>
-          </h2>
-        </div>
-      </div>
-
-      <div class="video-showcase-grid">
-        <div class="video-card tick-frame">
-          <video controls preload="metadata">
-            <source src="assets/video/Vizcom animation walking.mp4" type="video/mp4" />
-          </video>
-          <h4>Vizcom Walking Prototyping Animation</h4>
-          <p>Full motion demonstration showcasing AI-driven footwear movement and dynamic rendering.</p>
-        </div>
-        <div class="video-card tick-frame">
-          <video controls preload="metadata">
-            <source src="assets/video/VIZCOM workflow.mp4" type="video/mp4" />
-          </video>
-          <h4>Vizcom AI Ideation Workflow</h4>
-          <p>Step-by-step generative AI prototyping pipeline used during rapid conceptualization stages.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 PROJECTS (CON FICHAS TÉCNICAS Y SUELA GLADIADOR) -->
-    <section id="projects" class="wrap" style="margin-top: 4rem;">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">
-            <span data-lang-block="en">04 Selected Projects &amp; Technical Engineering</span>
-            <span data-lang-block="es">04 Proyectos Seleccionados e Ingeniería Técnica</span>
-          </div>
-          <h2 class="h2">
-            <span data-lang-block="en">From tooling engineering to factory production.</span>
-            <span data-lang-block="es">De la ingeniería de matricería a la producción en fábrica.</span>
-          </h2>
-        </div>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Project 1: Suela Gladiador (Nueva tarjeta basada en el PDF de ingeniería de suelas) -->
-        <article class="project-card">
-          <div class="media-slot" style="background:#0b0b0b; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:180px;">
-            <div style="font-family:var(--font-mono); color:var(--accent); font-size:0.8rem; margin-bottom:0.5px;">TALLA 40 / TUNNEL SYSTEM</div>
-            <h3 style="color:#fff; font-size:1.2rem; margin:0;">SUELA GLADIADOR</h3>
-            <p style="color:#aaa; font-size:0.8rem; margin-top:0.5rem;">Vista Inferior &bull; Ingeniería de Matricería</p>
-          </div>
-          <div class="pc-meta">
-            <span>Outsole Tooling / Size 40</span>
-            <span>Tunnel System Tech</span>
-          </div>
-          <h3>
-            <span data-lang-block="en">Gladiator Outsole Engineering &amp; Tooling (Size 40)</span>
-            <span data-lang-block="es">Ingeniería de Suela Gladiador y Matricería (Talla 40)</span>
-          </h3>
-          <p data-lang-block="en">
-            Advanced outsole technical specification featuring the integrated Tunnel System architecture, bottom profile views, precise dimensional guidelines, and mold release parameters.
-          </p>
-          <p data-lang-block="es">
-            Especificación técnica avanzada de suela integrando la arquitectura del sistema Tunnel System[cite: 11], vistas de perfil inferior, directrices dimensionales precisas y parámetros de desmoldeo.
-          </p>
-        </article>
-
-        <!-- Project 2: Skiving & Assembly Guide -->
-        <article class="project-card">
-          <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/img/ensambling guide.JPG" alt="Ensambling guide" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain; cursor:pointer;" />
-          </div>
-          <div class="pc-meta">
-            <span>Tech Guide / Skiving Specs</span>
-            <span>18Y Expertise</span>
-          </div>
-          <h3>
-            <span data-lang-block="en">Industrial Skiving &amp; Assembly Guide</span>
-            <span data-lang-block="es">Guía Industrial de Desbastado y Armado</span>
-          </h3>
-          <p data-lang-block="en">
-            Comprehensive factory cutting, skiving (rebaje y chaflán), and assembly specifications engineered under Bata/Manaco standards to guarantee precise upper construction.
-          </p>
-          <p data-lang-block="es">
-            Especificaciones integrales de corte, desbastado (rebaje y chaflán) y armado de fábrica diseñadas bajo estándares Bata/Manaco para garantizar la construcción precisa del corte.
-          </p>
-        </article>
-
-        <!-- Project 3: Manual Pattern Engineering (Artboard-1.jpg) -->
-        <article class="project-card">
-          <div class="media-slot" style="background:#0b0b0b; padding:0.5rem; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/img/Artboard-1.jpg" alt="Manual pattern draft" class="gallery-img" style="max-height:100%; max-width:100%; object-fit:contain; cursor:pointer;" />
-          </div>
-          <div class="pc-meta">
-            <span>Manual Draft / Pattern Layout</span>
-            <span>Geometric Precision</span>
-          </div>
-          <h3>
-            <span data-lang-block="en">Manual Pattern Engineering &amp; Drafting</span>
-            <span data-lang-block="es">Ingeniería de Patrones y Trazado Manual</span>
-          </h3>
-          <p data-lang-block="en">
-            Precision geometric upper pattern layout developed by hand, establishing exact component nesting, fold allowances, and structural tension points.
-          </p>
-          <p data-lang-block="es">
-            Diseño geométrico de precisión para patrones de capellada desarrollado a mano, estableciendo encaje exacto de componentes, márgenes de doblez y puntos de tensión estructural.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- 05 CAPABILITIES -->
-    <section id="skills" class="wrap" style="margin-top: 4rem;">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">
-            <span data-lang-block="en">05 Capabilities</span>
-            <span data-lang-block="es">05 Capacidades</span>
-          </div>
-          <h2 class="h2">
-            <span data-lang-block="en">Full spec sheet.</span>
-            <span data-lang-block="es">Ficha técnica completa.</span>
-          </h2>
-        </div>
-      </div>
-
-      <div class="skills-groups">
-        <div>
-          <h4 data-lang-block="en">Design &amp; CAD</h4>
-          <h4 data-lang-block="es">Diseño y CAD</h4>
-          <ul class="skill-tag-list">
-            <li>ShoeMaster CAD (16Y)</li>
-            <li>Adobe Illustrator</li>
-            <li>Adobe Photoshop</li>
-            <li>Blender 3D Modeling</li>
-            <li>Vizcom AI</li>
-            <li>Technical Tech Packs</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 data-lang-block="en">Web &amp; Digital Ops</h4>
-          <h4 data-lang-block="es">Desarrollo Web y Ops</h4>
-          <ul class="skill-tag-list">
-            <li>HTML5 / Modern CSS / JS</li>
-            <li>Firebase Hosting &amp; Firestore</li>
-            <li>Firebase Authentication</li>
-            <li>GitHub Actions CI/CD</li>
-            <li>WhatsApp Automations</li>
-            <li>AI-Assisted Code Prototyping</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 data-lang-block="en">Manufacturing &amp; Ops</h4>
-          <h4 data-lang-block="es">Manufactura y Operaciones</h4>
-          <ul class="skill-tag-list">
-            <li>Factory Floor Operations (18Y)</li>
-            <li>Pattern Engineering &amp; Grading</li>
-            <li>Material Yield &amp; Costing</li>
-            <li>Technical Guide Management</li>
-            <li>Sports &amp; Lifestyle Lines</li>
-            <li>Production Tooling &amp; Lasts</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 CONTACT -->
-    <section id="contact" class="wrap" style="margin-top: 4rem;">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">
-            <span data-lang-block="en">06 Contact</span>
-            <span data-lang-block="es">06 Contacto</span>
-          </div>
-          <h2 class="h2">
+        <div class
